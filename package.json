@@ -31,7 +31,7 @@
   },
   "homepage": "https://jasonandjay.github.io/study/",
   "gitHooks": {
-    "pre-commit": "lint-staged"
+    "pre-commit": ""
   },
   "lint-staged": {
     "*.{js,vue}": [
