@@ -10,7 +10,7 @@ Contributions are welcome!
 ## Edit Content
 ``` bash
 # 启动开发服务
-npm dev
+npm run dev
 
 # 添加导航 text&link
 modify /src/.vuepress/config.js
@@ -26,7 +26,7 @@ touch /src/zh/standard/Start.md
 # 添加内容
 
 # 构建为静态文件
-npm build
+npm run build
 
 # 提交代码到仓库
 ```
@@ -36,12 +36,12 @@ npm build
 > Please make sure your version of Node.js is greater than 8.
 
 ``` bash
-npm dev # serves VuePress' own docs with itself
+npm run dev # serves VuePress' own docs with itself
 ```
 
 ## Deploy
 ``` bash
-npm build
+npm run build
 ```
 
 ## Contribute
