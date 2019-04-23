@@ -1,5 +1,5 @@
 {
-  "name": "jasonandjay.github.io",
+  "name": "study",
   "version": "0.14.1",
   "description": "Minimalistic doc generator with Vue component based layout system",
   "main": "lib/index.js",
@@ -7,8 +7,8 @@
     "vuepress": "bin/vuepress.js"
   },
   "scripts": {
-    "dev": "node bin/vuepress dev docs",
-    "build": "node bin/vuepress build docs",
+    "dev": "node bin/vuepress dev src",
+    "build": "node bin/vuepress build src",
     "lint": "eslint --fix --ext .js,.vue bin/ lib/ test/",
     "deploy-gh": "yarn build && bash scripts/deploy-gh.sh",
     "prepublishOnly": "conventional-changelog -p angular -r 2 -i CHANGELOG.md -s",
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jasonandjay/jasonandjay.github.com.git"
+    "url": "git+git@github.com:jasonandjay/study.git"
   },
   "keywords": [
     "documentation",
@@ -27,9 +27,9 @@
   "author": "Evan You",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jasonandjay/jasonandjay.github.com/issues"
+    "url": "https://github.com/jasonandjay/study/issues"
   },
-  "homepage": "https://github.com/jasonandjay/jasonandjay.github.com",
+  "homepage": "https://jasonandjay.github.io/study/",
   "gitHooks": {
     "pre-commit": "lint-staged"
   },

@@ -1,6 +1,6 @@
 module.exports = {
-  dest: '../../../study',
-  base: '/study/',
+  dest: '../../docs',
+  base: '/docs/',
   markdown: {
     toc: { includeLevel: [2, 3] }
   },
@@ -25,15 +25,15 @@ module.exports = {
   serviceWorker: true,
   theme: 'vue',
   themeConfig: {
-    repo: 'jasonandjay/jasonandjay.github.com',
+    repo: 'jasonandjay/study',
 
-    docsDir: 'src/docs',
+    docsDir: 'src',
     editLinks: true,
    
     locales: {
       '/': {
         label: '简体中文',
-        repo: 'jasonandjay/jasonandjay.github.com',
+        repo: 'jasonandjay/study',
       
         selectText: '选择语言',
         editLinkText: '帮助我们改进内容',

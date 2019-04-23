@@ -1,5 +1,5 @@
-cd vuepress
-git init
+cd /
 git add -A
 git commit -m 'deploy'
-git push -f git@github.com:jasonandjay/jasonandjay.github.com.git master:dev
+echo "finish commit"
+git push -f origin master

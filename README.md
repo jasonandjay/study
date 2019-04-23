@@ -1,47 +1,53 @@
 <p align="center">
-  <a href="https://vuepress.vuejs.org/" target="_blank">
-    <img width="280" src="https://github.com/vuejs/vuepress/blob/master/docs/.vuepress/public/hero.png" alt="logo">
-  </a>
+  <img width="280" src="https://avatars1.githubusercontent.com/u/8192412?s=460&v=4" alt="logo">
 </p>
 
-# VuePress
-
-> Minimalistic docs generator with Vue component based layout system
-
-https://vuepress.vuejs.org/
-
-## Features
-
-- [Built-in markdown extensions](https://vuepress.vuejs.org/guide/markdown.html) optimized for technical documentation
-- [Ability to leverage Vue inside markdown files](https://vuepress.vuejs.org/guide/using-vue.html)
-- [Vue-powered custom theme system](https://vuepress.vuejs.org/guide/custom-themes.html)
-- Service Worker Integration
-- Google Analytics Integration
-- A default theme with:
-  - Responsive layout
-  - Optional Homepage
-  - Automatic basic typeahead search
-  - Customizable navbar and sidebar
-  - Auto-generated GitHub link and page edit links
-
-## Todo Features
-
-VuePress is still a work in progress. There are a few things that it currently does not support but are planned:
-
-- Multi-Language Support
-- Algolia DocSearch Integration
-- Blogging support
+## Target
+Collect quality content & classical problem
 
 Contributions are welcome!
+
+## Edit Content
+``` bash
+# 启动开发服务
+npm dev
+
+# 添加导航 text&link
+modify /src/.vuepress/config.js
+such as: 
+ {
+  text: '快速搭建开发环境',
+  link: '/zh/standard/Start.md'
+ }
+
+# 创建一个 markdown 文件
+touch /src/zh/standard/Start.md
+
+# 添加内容
+
+# 构建为静态文件
+npm build
+
+# 提交代码到仓库
+```
 
 ## Development
 
 > Please make sure your version of Node.js is greater than 8.
 
 ``` bash
-yarn
-yarn dev # serves VuePress' own docs with itself
+npm dev # serves VuePress' own docs with itself
 ```
+
+## Deploy
+``` bash
+npm build
+```
+
+## Contribute
+- Help us improve our content on exist pages
+![improve](/docs/img/improve.png)
+- Send pr to add excellent content
 
 ## License
 
