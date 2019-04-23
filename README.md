@@ -45,9 +45,12 @@ npm run build
 ```
 
 ## Contribute
-![improve](/src/.vuepress/public//img/improve.png)
+- Send pr to add excellent content
+- Help us improve our content on exist pages  
 
+![improve](/src/.vuepress/public//img/improve.png)
 
 ## License
 
 MIT
+
