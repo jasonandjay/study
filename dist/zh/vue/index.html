@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>VUE | 前端知识点总结</title>
+    <meta name="description" content="任何不能够给你快乐的编程都是耍流氓">
+    <link rel="icon" href="/study/logo.png">
+  <link rel="manifest" href="/study/manifest.json">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/study/icons/apple-touch-icon-152x152.png">
+  <link rel="mask-icon" href="/study/icons/safari-pinned-tab.svg" color="#3eaf7c">
+  <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/study/assets/css/styles.635c9f1e.css" as="style"><link rel="preload" href="/study/assets/js/app.635c9f1e.js" as="script"><link rel="preload" href="/study/assets/js/69.f6ed925c.js" as="script"><link rel="prefetch" href="/study/assets/css/1.styles.a739445a.css"><link rel="prefetch" href="/study/assets/css/2.styles.d2bc0975.css"><link rel="prefetch" href="/study/assets/css/3.styles.64030e8a.css"><link rel="prefetch" href="/study/assets/css/4.styles.17f312d5.css"><link rel="prefetch" href="/study/assets/css/5.styles.2c419b96.css"><link rel="prefetch" href="/study/assets/css/6.styles.46d20c68.css"><link rel="prefetch" href="/study/assets/css/7.styles.3717cac2.css"><link rel="prefetch" href="/study/assets/js/1.a739445a.js"><link rel="prefetch" href="/study/assets/js/10.eef5089e.js"><link rel="prefetch" href="/study/assets/js/11.8fc37d26.js"><link rel="prefetch" href="/study/assets/js/12.a2af5751.js"><link rel="prefetch" href="/study/assets/js/13.f29fc6a7.js"><link rel="prefetch" href="/study/assets/js/14.8879c291.js"><link rel="prefetch" href="/study/assets/js/15.68c562de.js"><link rel="prefetch" href="/study/assets/js/16.10854541.js"><link rel="prefetch" href="/study/assets/js/17.2c84c97e.js"><link rel="prefetch" href="/study/assets/js/18.0ae66e54.js"><link rel="prefetch" href="/study/assets/js/19.1135af74.js"><link rel="prefetch" href="/study/assets/js/2.d2bc0975.js"><link rel="prefetch" href="/study/assets/js/20.f330242a.js"><link rel="prefetch" href="/study/assets/js/21.0ec1999b.js"><link rel="prefetch" href="/study/assets/js/22.20ceeca7.js"><link rel="prefetch" href="/study/assets/js/23.a24fcbdd.js"><link rel="prefetch" href="/study/assets/js/24.f0965f77.js"><link rel="prefetch" href="/study/assets/js/25.33560a15.js"><link rel="prefetch" href="/study/assets/js/26.c6511f50.js"><link rel="prefetch" href="/study/assets/js/27.aa218dcd.js"><link rel="prefetch" href="/study/assets/js/28.05d8673c.js"><link rel="prefetch" href="/study/assets/js/29.f6c97b4f.js"><link rel="prefetch" href="/study/assets/js/3.64030e8a.js"><link rel="prefetch" href="/study/assets/js/30.5be89386.js"><link rel="prefetch" href="/study/assets/js/31.d9debdd6.js"><link rel="prefetch" href="/study/assets/js/32.5962bfc9.js"><link rel="prefetch" href="/study/assets/js/33.0651e0ff.js"><link rel="prefetch" href="/study/assets/js/34.d7bd3178.js"><link rel="prefetch" href="/study/assets/js/35.4be5883c.js"><link rel="prefetch" href="/study/assets/js/36.7577ddc4.js"><link rel="prefetch" href="/study/assets/js/37.d3274e0b.js"><link rel="prefetch" href="/study/assets/js/38.9fa306aa.js"><link rel="prefetch" href="/study/assets/js/39.6a56356b.js"><link rel="prefetch" href="/study/assets/js/4.17f312d5.js"><link rel="prefetch" href="/study/assets/js/40.fa91a498.js"><link rel="prefetch" href="/study/assets/js/41.dbde1bba.js"><link rel="prefetch" href="/study/assets/js/42.1c3fe94b.js"><link rel="prefetch" href="/study/assets/js/43.48cb7f98.js"><link rel="prefetch" href="/study/assets/js/44.dd44e169.js"><link rel="prefetch" href="/study/assets/js/45.5679d60d.js"><link rel="prefetch" href="/study/assets/js/46.6b334eee.js"><link rel="prefetch" href="/study/assets/js/47.b085c179.js"><link rel="prefetch" href="/study/assets/js/48.8a8b9e35.js"><link rel="prefetch" href="/study/assets/js/49.3ab28318.js"><link rel="prefetch" href="/study/assets/js/5.2c419b96.js"><link rel="prefetch" href="/study/assets/js/50.c9993d8a.js"><link rel="prefetch" href="/study/assets/js/51.0a241ab2.js"><link rel="prefetch" href="/study/assets/js/52.f62a73b3.js"><link rel="prefetch" href="/study/assets/js/53.adde1214.js"><link rel="prefetch" href="/study/assets/js/54.2ae0dffc.js"><link rel="prefetch" href="/study/assets/js/55.90badc74.js"><link rel="prefetch" href="/study/assets/js/56.f79126c4.js"><link rel="prefetch" href="/study/assets/js/57.44599f45.js"><link rel="prefetch" href="/study/assets/js/58.7180fe32.js"><link rel="prefetch" href="/study/assets/js/59.b6dcd43a.js"><link rel="prefetch" href="/study/assets/js/6.46d20c68.js"><link rel="prefetch" href="/study/assets/js/60.970b26e5.js"><link rel="prefetch" href="/study/assets/js/61.faa120a3.js"><link rel="prefetch" href="/study/assets/js/62.46c51ab7.js"><link rel="prefetch" href="/study/assets/js/63.d4429bb0.js"><link rel="prefetch" href="/study/assets/js/64.ffb9a94d.js"><link rel="prefetch" href="/study/assets/js/65.0fcb891c.js"><link rel="prefetch" href="/study/assets/js/66.2c27b41e.js"><link rel="prefetch" href="/study/assets/js/67.33cd347e.js"><link rel="prefetch" href="/study/assets/js/68.c2c2fd3a.js"><link rel="prefetch" href="/study/assets/js/7.3717cac2.js"><link rel="prefetch" href="/study/assets/js/70.35278824.js"><link rel="prefetch" href="/study/assets/js/71.1c5de694.js"><link rel="prefetch" href="/study/assets/js/72.6489cf3f.js"><link rel="prefetch" href="/study/assets/js/73.deabf33a.js"><link rel="prefetch" href="/study/assets/js/74.240479e7.js"><link rel="prefetch" href="/study/assets/js/75.1c365885.js"><link rel="prefetch" href="/study/assets/js/76.0a589c61.js"><link rel="prefetch" href="/study/assets/js/8.af9ce757.js"><link rel="prefetch" href="/study/assets/js/9.805e9b2c.js">
+    <link rel="stylesheet" href="/study/assets/css/1.styles.a739445a.css"><link rel="stylesheet" href="/study/assets/css/2.styles.d2bc0975.css"><link rel="stylesheet" href="/study/assets/css/3.styles.64030e8a.css"><link rel="stylesheet" href="/study/assets/css/4.styles.17f312d5.css"><link rel="stylesheet" href="/study/assets/css/5.styles.2c419b96.css"><link rel="stylesheet" href="/study/assets/css/6.styles.46d20c68.css"><link rel="stylesheet" href="/study/assets/css/7.styles.3717cac2.css"><link rel="stylesheet" href="/study/assets/css/styles.635c9f1e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/study/" class="home-link router-link-active"><!----> <span class="site-name">前端知识点总结</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/study/zh/standard/Start.html" class="nav-link">快速搭建开发环境</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">算法</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/study/zh/algorithm/Charpter4.html" class="nav-link">编程基本功</a></li><li class="dropdown-item"><!----> <a href="/study/zh/algorithm/Charpter5.html" class="nav-link">数学趣题(一)</a></li><li class="dropdown-item"><!----> <a href="/study/zh/algorithm/Charpter6.html" class="nav-link">数学趣题(二)</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">项目相关</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/study/zh/standard/Standard.html" class="nav-link">前端规范</a></li><li class="dropdown-item"><!----> <a href="/study/zh/standard/Project.html" class="nav-link">项目流程</a></li><li class="dropdown-item"><!----> <a href="/study/zh/standard/Cooperation.html" class="nav-link">前后端交互</a></li><li class="dropdown-item"><!----> <a href="/study/zh/standard/Compatibility.html" class="nav-link">移动端兼容问题</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">知名公司面试题</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/study/zh/interview/index.html" class="nav-link">面试必看</a></li><li class="dropdown-item"><!----> <a href="/study/zh/interview/ali.html" class="nav-link">阿里巴巴</a></li><li class="dropdown-item"><!----> <a href="/study/zh/interview/longhu.html" class="nav-link">龙湖地产</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">知识点笔记</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/study/zh/interface/Mind.html" class="nav-link">在线思维导图</a></li><li class="dropdown-item"><!----> <a href="/study/zh/vue/" class="nav-link router-link-exact-active router-link-active">Vue</a></li><li class="dropdown-item"><!----> <a href="/study/zh/react/" class="nav-link">React</a></li><li class="dropdown-item"><!----> <a href="/study/zh/miniapp/" class="nav-link">小程序</a></li><li class="dropdown-item"><!----> <a href="/study/zh/interface/Yuedu.html" class="nav-link">悦读管理后台</a></li><li class="dropdown-item"><!----> <a href="/study/zh/interface/BlackMarket.html" class="nav-link">BlackMarket</a></li><li class="dropdown-item"><!----> <a href="/study/zh/interface/TouTiao.html" class="nav-link">TouTiao</a></li></ul></div></div> <a href="https://github.com/jasonandjay" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/study/zh/standard/Start.html" class="nav-link">快速搭建开发环境</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">算法</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/study/zh/algorithm/Charpter4.html" class="nav-link">编程基本功</a></li><li class="dropdown-item"><!----> <a href="/study/zh/algorithm/Charpter5.html" class="nav-link">数学趣题(一)</a></li><li class="dropdown-item"><!----> <a href="/study/zh/algorithm/Charpter6.html" class="nav-link">数学趣题(二)</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">项目相关</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/study/zh/standard/Standard.html" class="nav-link">前端规范</a></li><li class="dropdown-item"><!----> <a href="/study/zh/standard/Project.html" class="nav-link">项目流程</a></li><li class="dropdown-item"><!----> <a href="/study/zh/standard/Cooperation.html" class="nav-link">前后端交互</a></li><li class="dropdown-item"><!----> <a href="/study/zh/standard/Compatibility.html" class="nav-link">移动端兼容问题</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">知名公司面试题</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/study/zh/interview/index.html" class="nav-link">面试必看</a></li><li class="dropdown-item"><!----> <a href="/study/zh/interview/ali.html" class="nav-link">阿里巴巴</a></li><li class="dropdown-item"><!----> <a href="/study/zh/interview/longhu.html" class="nav-link">龙湖地产</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">知识点笔记</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/study/zh/interface/Mind.html" class="nav-link">在线思维导图</a></li><li class="dropdown-item"><!----> <a href="/study/zh/vue/" class="nav-link router-link-exact-active router-link-active">Vue</a></li><li class="dropdown-item"><!----> <a href="/study/zh/react/" class="nav-link">React</a></li><li class="dropdown-item"><!----> <a href="/study/zh/miniapp/" class="nav-link">小程序</a></li><li class="dropdown-item"><!----> <a href="/study/zh/interface/Yuedu.html" class="nav-link">悦读管理后台</a></li><li class="dropdown-item"><!----> <a href="/study/zh/interface/BlackMarket.html" class="nav-link">BlackMarket</a></li><li class="dropdown-item"><!----> <a href="/study/zh/interface/TouTiao.html" class="nav-link">TouTiao</a></li></ul></div></div> <a href="https://github.com/jasonandjay" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav> <div class="carbon-ads"></div> <ul class="sidebar-links"><li><div class="sidebar-group first collapsable"><p class="sidebar-heading open"><span>Vue知识点</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/study/zh/vue/" class="active sidebar-link">VUE</a></li><li><a href="/study/zh/vue/Es6.html" class="sidebar-link">ES6</a></li><li><a href="/study/zh/vue/Es6方法扩展.html" class="sidebar-link">ES6扩展</a></li><li><a href="/study/zh/vue/Webpack.html" class="sidebar-link">Webpack</a></li><li><a href="/study/zh/vue/Babel.html" class="sidebar-link">Babel</a></li><li><a href="/study/zh/vue/Promise.html" class="sidebar-link">Promise/Aysnc</a></li><li><a href="/study/zh/vue/Vue 各种方法之间的区别.html" class="sidebar-link">Vue一些对比</a></li><li><a href="/study/zh/vue/Vue组件.html" class="sidebar-link">Vue组件</a></li><li><a href="/study/zh/vue/Vue路由.html" class="sidebar-link">Vue路由</a></li><li><a href="/study/zh/vue/Vue动画.html" class="sidebar-link">Vue动画</a></li><li><a href="/study/zh/vue/vue钩子函数.html" class="sidebar-link">Vue钩子</a></li><li><a href="/study/zh/vue/vuex.html" class="sidebar-link">Vuex</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="vue"><a href="#vue" aria-hidden="true" class="header-anchor">#</a> VUE</h1> <h4 id="_1、vue是什么"><a href="#_1、vue是什么" aria-hidden="true" class="header-anchor">#</a> 1、Vue是什么?</h4> <ul><li>Vue是一个渐进式的javascript开发框架，通过组件的开发，最后进行组件的组合，合并组件形成页面</li> <li>构造器(构造函数)</li> <li>自动化构建工具</li></ul> <h5 id="优点"><a href="#优点" aria-hidden="true" class="header-anchor">#</a> 优点</h5> <ol><li>组件化开发</li> <li>单页面路由</li> <li>丰富的Api方法</li> <li>双向的数据绑定</li> <li>单向数据流</li> <li>易于结合其他第三库</li></ol> <h5 id="缺点"><a href="#缺点" aria-hidden="true" class="header-anchor">#</a> 缺点</h5> <ol><li>生态系统不够完善</li> <li>可扩展性稍差</li></ol> <blockquote><p>1、全局安装   npm install -g vue-cli</p></blockquote> <blockquote><p>2、创建项目 vue init webpack myprojuct</p></blockquote> <blockquote><p>3、安装依赖包 npm install</p></blockquote> <div class="language- extra-class"><pre class="language-text"><code>下包：
+    cnpm i --save-dev vue
+
+CDN:内容分发网络/智能虚拟网络
+v-on:click 缩写 @click
+v-on:click=&quot;alert($event)&quot; // 阻止默认行为
+v-on:click.prevent=&quot;alert&quot; // 利用修饰符阻止默认行为
+
+指令
+v-show
+v-html
+v-text
+v-bind:src=&quot;list.img&quot;  // 绑定属性  所有属性都可以
+v-for=&quot;list in lists&quot;  // 循环
+
+
+插值
+{{message}}
+v-html=&quot;message&quot;  // 可以解析html元素
+v-text=&quot;message&quot;  // 只能解析字符串
+
+&lt;div id=&quot;app&quot;&gt;
+    {{message}}
+    {{message+&quot;&quot;}} // 表达式
+    &lt;input type=&quot;text&quot; v-model=&quot;message&quot;&gt;
+    &lt;button v-on:click=&quot;alert&quot;&gt;点击&lt;/button&gt;
+&lt;/div&gt;
+
+let vm = new Vue({ 
+    el:&quot;#app&quot;,  // 挂载对象
+    data:{ // 实例属性    // data是一个方法返回一个对象
+        message:&quot;世界您好!&quot;
+    }, 
+    beforeCreate(){   // 创建
+        // 挂载元素 实例属性 实例方法 都没有生成
+    },
+    created(){   // 创建完成
+        // 挂载元素 还是没有被初始化
+        // 实例属性 实例方法 编译出来
+    },
+    beforeMount(){  
+        // 挂载元素 初始化了，但是模板还没有被编译，原样输出
+        // 实例属性 实例方法 编译出来
+    },
+    mounted(){
+        // 挂载元素 初始化 模板被编译
+        // 属性 初始化
+        // 方法初始化
+    },
+    beforeUpdate(){
+        // 数据更新前
+    },
+    updated(){
+        // 数据更新后
+        // 当数据发生改变都会被updated捕获到
+    }
+    methods:{  // 方法
+        alert(e){
+            // e.preventDefault();
+            alert(this.message)
+        }
+    }
+})
+</code></pre></div><h4 id="_2、app-vue"><a href="#_2、app-vue" aria-hidden="true" class="header-anchor">#</a> 2、app.vue</h4> <div class="language- extra-class"><pre class="language-text"><code>自动添加前缀
+postcss-loader
+autoprefixer
+sass-loader
+{
+    loader:'postcss-loader',
+    optiond:{
+        sourceMap:true,
+        config:{
+            
+        }
+    }
+}
+
+vue init webpack-simple aaa
+vue
+vue-loader
+vue-template-compiler 
+vue-style-loader
+
+&lt;template&gt;
+    &lt;div&gt;
+        &lt;h1 v-bind:style=&quot;{fontSize:'12px'}&quot;&gt;绑定样式&lt;/h1&gt; // 直接赋值形式
+        &lt;h2 v-bind:style=&quot;styleObj&quot;&gt;绑定样式&lt;/h2&gt; // 对象形式
+        &lt;h3 v-bind:style=&quot;[obj1,obj2]&quot;&gt;绑定样式&lt;/h3&gt;  // 数组形式
+        
+        &lt;p v-bind:class=&quot;['text-res':true]&quot;&gt;绑定类&lt;/p&gt;  // 数组形式
+    &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+    export default:{
+        name:'app',
+        data(){
+            return{
+                styleObj:{
+                    fontSize:&quot;20px&quot;,
+                    color:&quot;red&quot;
+                },
+                obj1:{
+                    color:&quot;#dec&quot;
+                },
+                 obj2:{
+                    color:&quot;green&quot;
+                }
+            }
+        },
+        computed:{
+            // computed 属性默认只有 getter ，不过在需要时你也可以提供一个 setter
+            sum(){
+                return Number(this.vall)+Number(this.val2)
+            }
+        },
+        watch:{ // 监听新值和旧值
+            slogin(){
+                
+            }
+        }
+    }
+&lt;/script&gt;
+&lt;style scoped&gt; // 只在当前作用域里生效
+    .text-red{
+        color:red;
+    }
+&lt;/style&gt;
+</code></pre></div><h4 id="_3、ajax"><a href="#_3、ajax" aria-hidden="true" class="header-anchor">#</a> 3、ajax</h4> <ul><li>axios</li></ul> <h4 id="_4、取dom元素"><a href="#_4、取dom元素" aria-hidden="true" class="header-anchor">#</a> 4、取dom元素</h4> <div class="language- extra-class"><pre class="language-text"><code>  ref=&quot;aaa&quot;   this.$refs.aaa
+</code></pre></div><h4 id="_6、轮播图-element-ui"><a href="#_6、轮播图-element-ui" aria-hidden="true" class="header-anchor">#</a> 6、轮播图 element-ui</h4> <div class="language- extra-class"><pre class="language-text"><code>main.js
+import Element from 'element-ui'
+
+Vue.use(Element)
+
+页面
+&lt;el-carousel :interval=&quot;3000&quot;&gt;
+    &lt;el-carousel-item v-for=&quot;(list,ind) in Imgs&quot; :key=&quot;ind&quot;&gt;
+        &lt;img :src=&quot;list.picUrl&quot; class=&quot;img_res&quot;&gt;
+    &lt;/el-carousel-item&gt;
+&lt;/el-carousel&gt;
+
+style
+ @import url('element-ui/lib/theme-chalk/index.css');
+</code></pre></div><h4 id="_7、mock"><a href="#_7、mock" aria-hidden="true" class="header-anchor">#</a> 7、mock</h4> <div class="language- extra-class"><pre class="language-text"><code>下包：
+    mock-axios-adapter
+
+import mockjs from 'mockjs';
+import axios from 'axios';
+import axiosAdapter from 'mock-axios-adapter'  // 拦截axios请求
+
+
+const mock = new axiosAdapter(axios);
+
+mock.onGet('地址').reply(200,{
+    errCode:0,
+    errMsg:'',
+    result:[{
+        url:'./static/img/banner.jpg'
+    }]
+})
+
+</code></pre></div><h4 id="_8、vue-lazyload"><a href="#_8、vue-lazyload" aria-hidden="true" class="header-anchor">#</a> 8、vue-lazyload</h4> <div class="language- extra-class"><pre class="language-text"><code>1、安装插件
+npm install vue-lazyload --save-dev
+
+2. main.js引入插件：
+import VueLazyLoad from 'vue-lazyload'
+Vue.use(VueLazyLoad,{
+    error:'./static/error.png',
+    loading:'./static/loading.png'
+})
+
+3. vue文件中将需要懒加载的图片绑定 v-bind:src 修改为 v-lazy 
+&lt;img class=&quot;item-pic&quot; v-lazy=&quot;newItem.picUrl&quot;/&gt;
+
+</code></pre></div><h4 id="_9、插槽"><a href="#_9、插槽" aria-hidden="true" class="header-anchor">#</a> 9、插槽</h4> <div class="language- extra-class"><pre class="language-text"><code>&lt;slot&gt;&lt;/slot&gt;
+
+两端对齐：
+vertival-align:sub
+
+</code></pre></div><h4 id="_10、缓存页面"><a href="#_10、缓存页面" aria-hidden="true" class="header-anchor">#</a> 10、缓存页面</h4> <div class="language- extra-class"><pre class="language-text"><code>用这个标签包裹起来
+
+&lt;keep-alive&gt;
+    &lt;router-view/&gt;
+&lt;/keep-alive&gt;
+</code></pre></div><h4 id="_11、事件修饰符"><a href="#_11、事件修饰符" aria-hidden="true" class="header-anchor">#</a> 11、事件修饰符</h4> <blockquote><p>.stop
+.prevent
+.capture
+.self
+.once</p></blockquote> <div class="language- extra-class"><pre class="language-text"><code>&lt;!-- 阻止单击事件冒泡 --&gt;
+&lt;a v-on:click.stop=&quot;doThis&quot;&gt;&lt;/a&gt;
+&lt;!-- 提交事件不再重载页面 --&gt;
+&lt;form v-on:submit.prevent=&quot;onSubmit&quot;&gt;&lt;/form&gt;
+&lt;!-- 修饰符可以串联  --&gt;
+&lt;a v-on:click.stop.prevent=&quot;doThat&quot;&gt;&lt;/a&gt;
+&lt;!-- 只有修饰符 --&gt;
+&lt;form v-on:submit.prevent&gt;&lt;/form&gt;
+&lt;!-- 添加事件侦听器时使用事件捕获模式 --&gt;
+&lt;div v-on:click.capture=&quot;doThis&quot;&gt;...&lt;/div&gt;
+&lt;!-- 只当事件在该元素本身（而不是子元素）触发时触发回调 --&gt;
+&lt;div v-on:click.self=&quot;doThat&quot;&gt;...&lt;/div&gt;
+
+&lt;!-- click 事件只能点击一次，2.1.4版本新增 --&gt;
+&lt;a v-on:click.once=&quot;doThis&quot;&gt;&lt;/a&gt;
+</code></pre></div><h4 id="_12、按键修饰符"><a href="#_12、按键修饰符" aria-hidden="true" class="header-anchor">#</a> 12、按键修饰符</h4> <p>.enter</p> <p>.tab</p> <p>.delete (捕获 &quot;删除&quot; 和 &quot;退格&quot; 键)</p> <p>.esc</p> <p>.space</p> <p>.up</p> <p>.down</p> <p>.left  // 检测鼠标左键</p> <p>.right</p> <p>.ctrl</p> <p>.alt</p> <p>.shift</p> <p>.meta</p> <h4 id="_13、表单修饰符"><a href="#_13、表单修饰符" aria-hidden="true" class="header-anchor">#</a> 13、表单修饰符</h4> <ul><li>.lazy</li> <li>.number</li> <li>.trim</li></ul></div> <div class="page-edit"><div class="edit-link"><a href="https://vuepress.vuejs.org/zh/vue/" target="_blank" rel="noopener noreferrer">查看原文</a>
+        |  <a href="https://github.com/jasonandjay/edit/master/docs/zh/vue/README.md" target="_blank" rel="noopener noreferrer">编辑此页</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">2018-12-3 10:07:54</span></div></div> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/study/zh/vue/Es6.html">
+          ES6
+        </a>
+        →
+      </span></p></div> <div class="bsa-cpc-wrapper"><div class="bsa-cpc"></div></div></div> <!----></div></div>
+    <script src="/study/assets/js/69.f6ed925c.js" defer></script><script src="/study/assets/js/app.635c9f1e.js" defer></script>
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?c3446600de53c605ba4f6c792e47dff9";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  </body>
+</html>

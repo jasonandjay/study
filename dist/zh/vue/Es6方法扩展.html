@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ES6扩展 | 前端知识点总结</title>
+    <meta name="description" content="任何不能够给你快乐的编程都是耍流氓">
+    <link rel="icon" href="/study/logo.png">
+  <link rel="manifest" href="/study/manifest.json">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/study/icons/apple-touch-icon-152x152.png">
+  <link rel="mask-icon" href="/study/icons/safari-pinned-tab.svg" color="#3eaf7c">
+  <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/study/assets/css/styles.635c9f1e.css" as="style"><link rel="preload" href="/study/assets/js/app.635c9f1e.js" as="script"><link rel="preload" href="/study/assets/js/67.33cd347e.js" as="script"><link rel="prefetch" href="/study/assets/css/1.styles.a739445a.css"><link rel="prefetch" href="/study/assets/css/2.styles.d2bc0975.css"><link rel="prefetch" href="/study/assets/css/3.styles.64030e8a.css"><link rel="prefetch" href="/study/assets/css/4.styles.17f312d5.css"><link rel="prefetch" href="/study/assets/css/5.styles.2c419b96.css"><link rel="prefetch" href="/study/assets/css/6.styles.46d20c68.css"><link rel="prefetch" href="/study/assets/css/7.styles.3717cac2.css"><link rel="prefetch" href="/study/assets/js/1.a739445a.js"><link rel="prefetch" href="/study/assets/js/10.eef5089e.js"><link rel="prefetch" href="/study/assets/js/11.8fc37d26.js"><link rel="prefetch" href="/study/assets/js/12.a2af5751.js"><link rel="prefetch" href="/study/assets/js/13.f29fc6a7.js"><link rel="prefetch" href="/study/assets/js/14.8879c291.js"><link rel="prefetch" href="/study/assets/js/15.68c562de.js"><link rel="prefetch" href="/study/assets/js/16.10854541.js"><link rel="prefetch" href="/study/assets/js/17.2c84c97e.js"><link rel="prefetch" href="/study/assets/js/18.0ae66e54.js"><link rel="prefetch" href="/study/assets/js/19.1135af74.js"><link rel="prefetch" href="/study/assets/js/2.d2bc0975.js"><link rel="prefetch" href="/study/assets/js/20.f330242a.js"><link rel="prefetch" href="/study/assets/js/21.0ec1999b.js"><link rel="prefetch" href="/study/assets/js/22.20ceeca7.js"><link rel="prefetch" href="/study/assets/js/23.a24fcbdd.js"><link rel="prefetch" href="/study/assets/js/24.f0965f77.js"><link rel="prefetch" href="/study/assets/js/25.33560a15.js"><link rel="prefetch" href="/study/assets/js/26.c6511f50.js"><link rel="prefetch" href="/study/assets/js/27.aa218dcd.js"><link rel="prefetch" href="/study/assets/js/28.05d8673c.js"><link rel="prefetch" href="/study/assets/js/29.f6c97b4f.js"><link rel="prefetch" href="/study/assets/js/3.64030e8a.js"><link rel="prefetch" href="/study/assets/js/30.5be89386.js"><link rel="prefetch" href="/study/assets/js/31.d9debdd6.js"><link rel="prefetch" href="/study/assets/js/32.5962bfc9.js"><link rel="prefetch" href="/study/assets/js/33.0651e0ff.js"><link rel="prefetch" href="/study/assets/js/34.d7bd3178.js"><link rel="prefetch" href="/study/assets/js/35.4be5883c.js"><link rel="prefetch" href="/study/assets/js/36.7577ddc4.js"><link rel="prefetch" href="/study/assets/js/37.d3274e0b.js"><link rel="prefetch" href="/study/assets/js/38.9fa306aa.js"><link rel="prefetch" href="/study/assets/js/39.6a56356b.js"><link rel="prefetch" href="/study/assets/js/4.17f312d5.js"><link rel="prefetch" href="/study/assets/js/40.fa91a498.js"><link rel="prefetch" href="/study/assets/js/41.dbde1bba.js"><link rel="prefetch" href="/study/assets/js/42.1c3fe94b.js"><link rel="prefetch" href="/study/assets/js/43.48cb7f98.js"><link rel="prefetch" href="/study/assets/js/44.dd44e169.js"><link rel="prefetch" href="/study/assets/js/45.5679d60d.js"><link rel="prefetch" href="/study/assets/js/46.6b334eee.js"><link rel="prefetch" href="/study/assets/js/47.b085c179.js"><link rel="prefetch" href="/study/assets/js/48.8a8b9e35.js"><link rel="prefetch" href="/study/assets/js/49.3ab28318.js"><link rel="prefetch" href="/study/assets/js/5.2c419b96.js"><link rel="prefetch" href="/study/assets/js/50.c9993d8a.js"><link rel="prefetch" href="/study/assets/js/51.0a241ab2.js"><link rel="prefetch" href="/study/assets/js/52.f62a73b3.js"><link rel="prefetch" href="/study/assets/js/53.adde1214.js"><link rel="prefetch" href="/study/assets/js/54.2ae0dffc.js"><link rel="prefetch" href="/study/assets/js/55.90badc74.js"><link rel="prefetch" href="/study/assets/js/56.f79126c4.js"><link rel="prefetch" href="/study/assets/js/57.44599f45.js"><link rel="prefetch" href="/study/assets/js/58.7180fe32.js"><link rel="prefetch" href="/study/assets/js/59.b6dcd43a.js"><link rel="prefetch" href="/study/assets/js/6.46d20c68.js"><link rel="prefetch" href="/study/assets/js/60.970b26e5.js"><link rel="prefetch" href="/study/assets/js/61.faa120a3.js"><link rel="prefetch" href="/study/assets/js/62.46c51ab7.js"><link rel="prefetch" href="/study/assets/js/63.d4429bb0.js"><link rel="prefetch" href="/study/assets/js/64.ffb9a94d.js"><link rel="prefetch" href="/study/assets/js/65.0fcb891c.js"><link rel="prefetch" href="/study/assets/js/66.2c27b41e.js"><link rel="prefetch" href="/study/assets/js/68.c2c2fd3a.js"><link rel="prefetch" href="/study/assets/js/69.f6ed925c.js"><link rel="prefetch" href="/study/assets/js/7.3717cac2.js"><link rel="prefetch" href="/study/assets/js/70.35278824.js"><link rel="prefetch" href="/study/assets/js/71.1c5de694.js"><link rel="prefetch" href="/study/assets/js/72.6489cf3f.js"><link rel="prefetch" href="/study/assets/js/73.deabf33a.js"><link rel="prefetch" href="/study/assets/js/74.240479e7.js"><link rel="prefetch" href="/study/assets/js/75.1c365885.js"><link rel="prefetch" href="/study/assets/js/76.0a589c61.js"><link rel="prefetch" href="/study/assets/js/8.af9ce757.js"><link rel="prefetch" href="/study/assets/js/9.805e9b2c.js">
+    <link rel="stylesheet" href="/study/assets/css/1.styles.a739445a.css"><link rel="stylesheet" href="/study/assets/css/2.styles.d2bc0975.css"><link rel="stylesheet" href="/study/assets/css/3.styles.64030e8a.css"><link rel="stylesheet" href="/study/assets/css/4.styles.17f312d5.css"><link rel="stylesheet" href="/study/assets/css/5.styles.2c419b96.css"><link rel="stylesheet" href="/study/assets/css/6.styles.46d20c68.css"><link rel="stylesheet" href="/study/assets/css/7.styles.3717cac2.css"><link rel="stylesheet" href="/study/assets/css/styles.635c9f1e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/study/" class="home-link router-link-active"><!----> <span class="site-name">前端知识点总结</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/study/zh/standard/Start.html" class="nav-link">快速搭建开发环境</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">算法</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/study/zh/algorithm/Charpter4.html" class="nav-link">编程基本功</a></li><li class="dropdown-item"><!----> <a href="/study/zh/algorithm/Charpter5.html" class="nav-link">数学趣题(一)</a></li><li class="dropdown-item"><!----> <a href="/study/zh/algorithm/Charpter6.html" class="nav-link">数学趣题(二)</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">项目相关</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/study/zh/standard/Standard.html" class="nav-link">前端规范</a></li><li class="dropdown-item"><!----> <a href="/study/zh/standard/Project.html" class="nav-link">项目流程</a></li><li class="dropdown-item"><!----> <a href="/study/zh/standard/Cooperation.html" class="nav-link">前后端交互</a></li><li class="dropdown-item"><!----> <a href="/study/zh/standard/Compatibility.html" class="nav-link">移动端兼容问题</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">知名公司面试题</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/study/zh/interview/index.html" class="nav-link">面试必看</a></li><li class="dropdown-item"><!----> <a href="/study/zh/interview/ali.html" class="nav-link">阿里巴巴</a></li><li class="dropdown-item"><!----> <a href="/study/zh/interview/longhu.html" class="nav-link">龙湖地产</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">知识点笔记</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/study/zh/interface/Mind.html" class="nav-link">在线思维导图</a></li><li class="dropdown-item"><!----> <a href="/study/zh/vue/" class="nav-link router-link-active">Vue</a></li><li class="dropdown-item"><!----> <a href="/study/zh/react/" class="nav-link">React</a></li><li class="dropdown-item"><!----> <a href="/study/zh/miniapp/" class="nav-link">小程序</a></li><li class="dropdown-item"><!----> <a href="/study/zh/interface/Yuedu.html" class="nav-link">悦读管理后台</a></li><li class="dropdown-item"><!----> <a href="/study/zh/interface/BlackMarket.html" class="nav-link">BlackMarket</a></li><li class="dropdown-item"><!----> <a href="/study/zh/interface/TouTiao.html" class="nav-link">TouTiao</a></li></ul></div></div> <a href="https://github.com/jasonandjay" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/study/zh/standard/Start.html" class="nav-link">快速搭建开发环境</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">算法</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/study/zh/algorithm/Charpter4.html" class="nav-link">编程基本功</a></li><li class="dropdown-item"><!----> <a href="/study/zh/algorithm/Charpter5.html" class="nav-link">数学趣题(一)</a></li><li class="dropdown-item"><!----> <a href="/study/zh/algorithm/Charpter6.html" class="nav-link">数学趣题(二)</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">项目相关</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/study/zh/standard/Standard.html" class="nav-link">前端规范</a></li><li class="dropdown-item"><!----> <a href="/study/zh/standard/Project.html" class="nav-link">项目流程</a></li><li class="dropdown-item"><!----> <a href="/study/zh/standard/Cooperation.html" class="nav-link">前后端交互</a></li><li class="dropdown-item"><!----> <a href="/study/zh/standard/Compatibility.html" class="nav-link">移动端兼容问题</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">知名公司面试题</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/study/zh/interview/index.html" class="nav-link">面试必看</a></li><li class="dropdown-item"><!----> <a href="/study/zh/interview/ali.html" class="nav-link">阿里巴巴</a></li><li class="dropdown-item"><!----> <a href="/study/zh/interview/longhu.html" class="nav-link">龙湖地产</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">知识点笔记</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/study/zh/interface/Mind.html" class="nav-link">在线思维导图</a></li><li class="dropdown-item"><!----> <a href="/study/zh/vue/" class="nav-link router-link-active">Vue</a></li><li class="dropdown-item"><!----> <a href="/study/zh/react/" class="nav-link">React</a></li><li class="dropdown-item"><!----> <a href="/study/zh/miniapp/" class="nav-link">小程序</a></li><li class="dropdown-item"><!----> <a href="/study/zh/interface/Yuedu.html" class="nav-link">悦读管理后台</a></li><li class="dropdown-item"><!----> <a href="/study/zh/interface/BlackMarket.html" class="nav-link">BlackMarket</a></li><li class="dropdown-item"><!----> <a href="/study/zh/interface/TouTiao.html" class="nav-link">TouTiao</a></li></ul></div></div> <a href="https://github.com/jasonandjay" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav> <div class="carbon-ads"></div> <ul class="sidebar-links"><li><div class="sidebar-group first collapsable"><p class="sidebar-heading open"><span>Vue知识点</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/study/zh/vue/" class="sidebar-link">VUE</a></li><li><a href="/study/zh/vue/Es6.html" class="sidebar-link">ES6</a></li><li><a href="/study/zh/vue/Es6方法扩展.html" class="active sidebar-link">ES6扩展</a></li><li><a href="/study/zh/vue/Webpack.html" class="sidebar-link">Webpack</a></li><li><a href="/study/zh/vue/Babel.html" class="sidebar-link">Babel</a></li><li><a href="/study/zh/vue/Promise.html" class="sidebar-link">Promise/Aysnc</a></li><li><a href="/study/zh/vue/Vue 各种方法之间的区别.html" class="sidebar-link">Vue一些对比</a></li><li><a href="/study/zh/vue/Vue组件.html" class="sidebar-link">Vue组件</a></li><li><a href="/study/zh/vue/Vue路由.html" class="sidebar-link">Vue路由</a></li><li><a href="/study/zh/vue/Vue动画.html" class="sidebar-link">Vue动画</a></li><li><a href="/study/zh/vue/vue钩子函数.html" class="sidebar-link">Vue钩子</a></li><li><a href="/study/zh/vue/vuex.html" class="sidebar-link">Vuex</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="es6扩展"><a href="#es6扩展" aria-hidden="true" class="header-anchor">#</a> ES6扩展</h1> <table><thead><tr><th>方法</th> <th>说明</th></tr></thead> <tbody><tr><td>Number.isFinite()</td> <td>判断一个值是不是有限的</td></tr> <tr><td>Number.isNan()</td> <td>判断一个值是不是NaN</td></tr> <tr><td>Number()</td> <td>类型转换</td></tr> <tr><td>Numbar.parseInt()</td> <td>将字符串转化为整数</td></tr> <tr><td>Numbar.parseFloat()</td> <td>将字符串转化为小数</td></tr> <tr><td>Numbar.isInteger()</td> <td>判断一个数是不是一个整数</td></tr> <tr><td>Number.isSafeInteger()</td> <td>判断是不是一个安全的数</td></tr> <tr><td>Math.cbrt()</td> <td>用于计算一个数的立方根</td></tr> <tr><td>Math.trunc()</td> <td>用于去除一个数的小数部分，返回整数</td></tr></tbody></table> <div class="language- extra-class"><pre class="language-text"><code>1、如果参数类型不是数值，Number.isFinite一律返回false
+2、如果参数类型不是NaN，Number.isNaN一律返回false
+注:es5含有隐式转换，es6不含有隐式转换
+
+// es5
+isFinite(25) // true
+isFinite(&quot;25&quot;) // true
+// es6
+Number.isFinite(25) // true
+Number.isFinite(&quot;25&quot;) // false
+
+
+// es5
+isNaN(NaN) // true
+isNaN(&quot;NaN&quot;) // true
+// es6
+Number.isNaN(NaN) // true
+Number.isNaN(&quot;NaN&quot;) // false
+Number.isNaN(1) // false
+
+3、Number.parseInt(), Number.parseFloat()
+// ES5的写法
+parseInt('12.34') // 12
+parseFloat('123.45#') // 123.45
+
+// ES6的写法
+Number.parseInt('12.34') // 12
+Number.parseFloat('123.45#') // 123.45
+
+这样做的目的，是逐步减少全局性方法，使得语言逐步模块化。
+Number.parseInt === parseInt // true
+Number.parseFloat === parseFloat // true
+
+4、Number.isInteger()用来判断一个数值是否为整数
+Number.isInteger(25) // true
+Number.isInteger(25.1) // false
+Number.isInteger(25.0) // true
+// 如果参数不是数值，Number.isInteger返回false
+Number.isInteger() // false
+Number.isInteger(null) // false
+Number.isInteger('15') // false
+Number.isInteger(true) // false
+
+
+5、Number.isSafeInteger()则是用来判断一个整数是否落在这个范围之内
+Number.isSafeInteger('a') // false
+Number.isSafeInteger(null) // false
+Number.isSafeInteger(NaN) // false
+Number.isSafeInteger(Infinity) // false
+Number.isSafeInteger(-Infinity) // false
+
+Number.isSafeInteger(3) // true
+Number.isSafeInteger(1.2) // false
+Number.isSafeInteger(9007199254740990) // true
+Number.isSafeInteger(9007199254740992) // false
+
+Number.isSafeInteger(Number.MIN_SAFE_INTEGER - 1) // false
+Number.isSafeInteger(Number.MIN_SAFE_INTEGER) // true
+Number.isSafeInteger(Number.MAX_SAFE_INTEGER) // true
+Number.isSafeInteger(Number.MAX_SAFE_INTEGER + 1) // false
+
+6、Math.trunc方法用于去除一个数的小数部分，返回整数部分
+Math.trunc(4.1) // 4
+Math.trunc(4.9) // 4
+Math.trunc(-4.1) // -4
+Math.trunc(-4.9) // -4
+Math.trunc(-0.1234) // -0
+
+// 对于非数值，Math.trunc内部使用Number方法将其先转为数值
+Math.trunc('123.456') // 123
+Math.trunc(true) //1
+Math.trunc(false) // 0
+Math.trunc(null) // 0
+
+// 对于空值和无法截取整数的值，返回NaN
+Math.trunc(NaN);      // NaN
+Math.trunc('foo');    // NaN
+Math.trunc();         // NaN
+Math.trunc(undefined) // NaN
+
+7、Math.cbrt方法用于计算一个数的立方根
+Math.cbrt(-1) // -1
+Math.cbrt(0)  // 0
+Math.cbrt(1)  // 1
+Math.cbrt(2)  // 1.2599210498948734
+对于非数值，Math.cbrt方法内部也是先使用Number方法将其转为数值
+Math.cbrt('8') // 2
+Math.cbrt('hello') // NaN
+
+</code></pre></div><h4 id="_1、设置默认值"><a href="#_1、设置默认值" aria-hidden="true" class="header-anchor">#</a> 1、设置默认值</h4> <ul><li>回调里面使用箭头函数，this指向上级对象</li> <li>回调里面使用function,this指向当前对象</li></ul> <div class="language- extra-class"><pre class="language-text"><code> // es5
+ let fun = function(val){
+    var val = val || 666;
+    return val
+ }
+ console.log(fun())
+  
+ 
+ // es6
+ let fun = (val=666) =&gt; {
+     return val;
+ }
+ // 简写
+ let fun = (val=666) =&gt; val;
+ 
+ // 函数默认值的注意事项
+ // 定义形参默认值，需要注意：先声明后使用，遵循声明变量的规则
+ let fun = (val,val) =&gt; { // 报错
+    console.log(val)
+ }
+ let fun = (val2 = 2,val1 = val2) =&gt; { 
+    console.log(val1)
+ }
+ fun();
+ 
+ 
+ // 设置形参后，函数内部的私有变量如果用let命令来声明变量，不得重复定义
+ let fun = (val) =&gt; {  // 报错
+     let val = 666;
+     console.log(val)
+ }
+ fun(555);
+ 
+ 
+ // 获取函数所有形参
+ // es5
+ let fun = function(){
+    console.log(arguments); // 类数组
+    [...arguments].forEach(item=&gt;{ // 通过...把它转为一个数组
+        console.log(item);
+    })
+ }
+ fun(1,2,3,4,5)
+ 
+ // es6
+ // 箭头函数没有arguments对象
+ // reset 参数返回一个实参的数组的集合
+ let fun = (...reset) =&gt; {
+     console.log(reset)
+     reset.forEach(item=&gt;{ 
+        console.log(item);
+    })
+ }
+ fun(1,2,3,4,5,6)
+ 
+ 
+ 
+</code></pre></div><h4 id="_2、扩展运算符"><a href="#_2、扩展运算符" aria-hidden="true" class="header-anchor">#</a> 2、扩展运算符 ...</h4> <ul><li>可以展开一个数组</li></ul> <h4 id="_3、伪逗号"><a href="#_3、伪逗号" aria-hidden="true" class="header-anchor">#</a> 3、伪逗号</h4> <ul><li>es2017允许你去写一个逗号</li></ul> <div class="language- extra-class"><pre class="language-text"><code>let obj = {
+    name:'zs',
+    age:18,
+}
+</code></pre></div><h4 id="_4、数组的扩展"><a href="#_4、数组的扩展" aria-hidden="true" class="header-anchor">#</a> 4、数组的扩展</h4> <div class="language- extra-class"><pre class="language-text"><code>1、扩展运算符
+// 将数组转化为数组项的参数系列
+let arr1 = [1,2,3,4];
+let arr2 = [...arr1];
+
+
+2. Array.from(arr)
+// 将类似数组、可以遍历对象(包括set map解构类型的数据) 转为数组
+...arr 展开数组的每一项   [...arr] 转为一个数组
+
+
+3、数组的空值/空位
+let arr = new Array(5);
+// 长度为5   a[0]为undefined
+
+
+4、Array.of()  用来将一组参数序列转为数组,可以用来代替new Array()
+let arr = Array.of(1,2,3,4,5);
+console.log(arr)
+// 不传参为空数组
+
+
+5、Array.copyWithin(target,start,end)
+用数组中的一些项，替换数组中的值
+// target(必须)： 要替换项的下标
+// start(可选)： 替换的起始下标
+// end(可选)： 替换的结束下标
+let arr = [1, 4, 2, 5, 3, 2];
+console.log(arr.copyWithin(0, 4))
+// [ 3, 2, 2, 5, 3, 2 ]
+
+
+6、Array.find()   返回满足条件的第一个项
+let arr = [2,8,4,3];
+let res = arr.find((item,index,array)=&gt;{
+    return item&gt;2;
+})
+console.log(res) // 8
+
+
+7、Array.findIndex()   返回满足条件的第一个项下标
+let arr = [2,8,4,3];
+let res = arr.findIndex((item,index,array)=&gt;{
+    return item==2;
+})
+console.log(res) // 0
+
+
+8、Array.fill()  给数组填充相同的值
+let arr = new Array(5);
+arr.fill(&quot;mmd&quot;,2,3) 
+// 2 是开始下标
+// 3 是结束下标
+
+
+9、去重 结合set实现数组去重
+let arr = [1,2,3,4,5,2,1,3,4,4];
+let res = new Set(arr);
+console.log(res) // 转为一个类数组
+let result = Array.from(res); // 转数组
+
+
+</code></pre></div><h4 id="_5、this指向"><a href="#_5、this指向" aria-hidden="true" class="header-anchor">#</a> 5、this指向</h4> <div class="language- extra-class"><pre class="language-text"><code>构造器 === 构造函数
+1、箭头函数不是一个构造器，不可以实例化
+let fun = () =&gt; {
+    
+}
+new fun()  // 报错
+
+2、::  左边是一个对象  右边是一个方法
+</code></pre></div><h4 id="_6、对象扩展"><a href="#_6、对象扩展" aria-hidden="true" class="header-anchor">#</a> 6、对象扩展</h4> <div class="language- extra-class"><pre class="language-text"><code>console.log(Object.is(123,'123')) // false
+
+
+1、Object.assign()  默认是浅拷贝
+ // 3个参数是深度拷贝  Object.assign({},obj1,obj2)
+ // 2个参数是浅拷贝 Object.assign(obj1,obj2)
+ 
+ 有{}会生成新串   没有会替换原字符串
+</code></pre></div></div> <div class="page-edit"><div class="edit-link"><a href="https://vuepress.vuejs.org/zh/vue/Es6方法扩展" target="_blank" rel="noopener noreferrer">查看原文</a>
+        |  <a href="https://github.com/jasonandjay/edit/master/docs/zh/vue/Es6方法扩展.md" target="_blank" rel="noopener noreferrer">编辑此页</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">2018-12-3 10:07:54</span></div></div> <!----> <div class="bsa-cpc-wrapper"><div class="bsa-cpc"></div></div></div> <!----></div></div>
+    <script src="/study/assets/js/67.33cd347e.js" defer></script><script src="/study/assets/js/app.635c9f1e.js" defer></script>
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?c3446600de53c605ba4f6c792e47dff9";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  </body>
+</html>
