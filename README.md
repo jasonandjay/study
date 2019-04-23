@@ -45,9 +45,6 @@ npm run build
 ```
 
 ## Contribute
-- Send pr to add excellent content
-- Help us improve our content on exist pages    
-
 ![improve](/src/.vuepress/public//img/improve.png)
 
 
