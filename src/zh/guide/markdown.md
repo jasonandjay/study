@@ -57,7 +57,7 @@
 
 ## Front Matter
 
-VuePress 提供了对 [YAML front matter](https://jekyllrb.com/docs/frontmatter/) 开箱即用的支持:
+VuePress 提供了对 [YAML front matter](https://jekyllrb.com/study/frontmatter/) 开箱即用的支持:
 
 ``` yaml
 ---

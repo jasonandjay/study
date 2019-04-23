@@ -2,21 +2,21 @@
 
 下述的指南基于以下条件：
 
-- 文档放置在项目的 `docs` 目录中；
+- 文档放置在项目的 `study` 目录中；
 - 使用的是默认的构建输出位置；
 - VuePress 以本地依赖的形式被安装到你的项目中，并且配置了如下的 npm scripts:
 
 ``` json
 {
   "scripts": {
-    "docs:build": "vuepress build docs"
+    "study:build": "vuepress build study"
   }
 }
 ```
 
 ## GitHub Pages
 
-1. 在 `docs/.vuepress/config.js` 中设置正确的 `base`。
+1. 在 `study/.vuepress/config.js` 中设置正确的 `base`。
 
    如果你打算发布到 `https://<USERNAME>.github.io/`，则可以省略这一步，因为 `base` 默认即是 `"/"`。
 
@@ -31,10 +31,10 @@
 set -e
 
 # 生成静态文件
-npm run docs:build
+npm run study:build
 
 # 进入生成的文件夹
-cd docs/.vuepress/dist
+cd study/.vuepress/dist
 
 # 如果是发布到自定义域名
 # echo 'www.example.com' > CNAME
@@ -58,7 +58,7 @@ cd -
 
 ## GitLab Pages and GitLab CI
 
-1. 在 `docs/.vuepress/config.js` 中设置正确的 `base`。
+1. 在 `study/.vuepress/config.js` 中设置正确的 `base`。
 
    如果你打算发布到 `https://<USERNAME or GROUP>.gitlab.io/`，则可以省略这一步，因为 `base` 默认即是 `"/"`。
   
@@ -77,7 +77,7 @@ pages:
 
  script:
  - npm install
- - npm run docs:build
+ - npm run study:build
  artifacts:
    paths:
    - public
@@ -89,8 +89,8 @@ pages:
 
 1. 在 Netlify 中, 创建一个新的 Github 项目，使用以下设置：
 
-  - **Build Command:** `npm run build:docs` 或者 `yarn build:docs`
-  - **Publish directory:** `docs/.vuepress/dist`
+  - **Build Command:** `npm run build:study` 或者 `yarn build:study`
+  - **Publish directory:** `study/.vuepress/dist`
 
 2. 点击 deploy 按钮！
 
@@ -104,7 +104,7 @@ pages:
 ```json
 {
  "hosting": {
-   "public": "./docs/.vuepress/dist",
+   "public": "./study/.vuepress/dist",
    "ignore": []
  }
 }
@@ -119,17 +119,17 @@ pages:
 }
 ```
 
-3. 在执行了 `yarn docs:build` 或 `npm run docs:build` 后, 使用 `firebase deploy` 指令来部署。
+3. 在执行了 `yarn study:build` 或 `npm run study:build` 后, 使用 `firebase deploy` 指令来部署。
 
 ## Surge
 
 1. 首先，假设你已经安装了 [surge](https://www.npmjs.com/package/surge)；
 
-2. 运行 `yarn docs:build` 或者 `npm run docs:build`；
+2. 运行 `yarn study:build` 或者 `npm run study:build`；
 
-3. 想要使用 surge 来部署，你可以运行： `surge docs/.vuepress/dist`；
+3. 想要使用 surge 来部署，你可以运行： `surge study/.vuepress/dist`；
 
-你也可以通过 `surge docs/.vuepress/dist yourdomain.com` 来部署到 [自定义域名](http://surge.sh/help/adding-a-custom-domain)。
+你也可以通过 `surge study/.vuepress/dist yourdomain.com` 来部署到 [自定义域名](http://surge.sh/help/adding-a-custom-domain)。
 
 
 ## Heroku
@@ -149,7 +149,7 @@ pages:
 `static.json`:
 ```json
 {
-"root": "./docs/.vuepress/dist"
+"root": "./study/.vuepress/dist"
 }
 ```
 

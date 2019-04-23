@@ -41,7 +41,7 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 - 已翻墙，去官网下载安装，后续安装插件
 - 常用插件如下   
 
-![插件列表](/docs/FastStoneEditor.jpg)
+![插件列表](/study/FastStoneEditor.jpg)
 
 ## 沟通工具
 - 邮箱
@@ -49,7 +49,7 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 
 ## 如何解决问题
 ### 常用方法
-![秘籍](/docs/baidu.png)
+![秘籍](/study/baidu.png)
 ### 进阶方法
 - 查看官方文档
 - 查看Github issues

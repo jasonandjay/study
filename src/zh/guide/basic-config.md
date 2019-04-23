@@ -6,7 +6,7 @@
 
 ```
 .
-├─ docs
+├─ study
 │  ├─ README.md
 │  └─ .vuepress
 │     └─ config.js

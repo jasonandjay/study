@@ -314,7 +314,7 @@ module.exports = {
 
 ### Algolia 搜索
 
-你可以通过 `themeConfig.algolia` 选项来用 [Algolia 搜索](https://community.algolia.com/docsearch/) 替换内置的搜索框。要启用 Algolia 搜索，你需要至少提供 `apiKey` 和 `indexName`：
+你可以通过 `themeConfig.algolia` 选项来用 [Algolia 搜索](https://community.algolia.com/studyearch/) 替换内置的搜索框。要启用 Algolia 搜索，你需要至少提供 `apiKey` 和 `indexName`：
 
 ```js
 module.exports = {
@@ -328,10 +328,10 @@ module.exports = {
 ```
 
 ::: warning 注意
-不同于开箱即用的 [内置搜索](#内置搜索)，[Algolia 搜索](https://community.algolia.com/docsearch/) 需要你在使用之前将你的网站提交给它们用于创建索引。
+不同于开箱即用的 [内置搜索](#内置搜索)，[Algolia 搜索](https://community.algolia.com/studyearch/) 需要你在使用之前将你的网站提交给它们用于创建索引。
 :::
 
-更多选项请参考 [Algolia DocSearch 的文档](https://github.com/algolia/docsearch#docsearch-options)。
+更多选项请参考 [Algolia studyearch 的文档](https://github.com/algolia/studyearch#studyearch-options)。
 
 ## 最后更新时间
 
@@ -364,7 +364,7 @@ module.exports = {
 开启 `themeConfig.serviceWorker.updatePopup` 选项，将开启一个能够刷新内容的弹窗。当网站更新（即 Service Worker 更新）时，它会提供一个 `refresh` 按钮，允许用户立刻刷新内容。
 
 ::: tip 提示
-如果没有 `refresh` 按钮，新的 service worker 将在所有的 [clients](https://developer.mozilla.org/en-US/docs/Web/API/Clients) 关闭后才会处于活动状态。这意味着访问者在关闭你网站的所有标签之前将无法看到新内容。但是，`refresh` 按钮可以立即激活新的 Service Worker。
+如果没有 `refresh` 按钮，新的 service worker 将在所有的 [clients](https://developer.mozilla.org/en-US/study/Web/API/Clients) 关闭后才会处于活动状态。这意味着访问者在关闭你网站的所有标签之前将无法看到新内容。但是，`refresh` 按钮可以立即激活新的 Service Worker。
 :::
 
 ``` js
@@ -410,11 +410,11 @@ module.exports = {
     // 以下为可选的编辑链接选项
 
     // 假如你的文档仓库和项目本身不在一个仓库：
-    docsRepo: 'vuejs/vuepress',
+    studyRepo: 'vuejs/vuepress',
     // 假如文档不是放在仓库的根目录下：
-    docsDir: 'docs',
+    studyDir: 'study',
     // 假如文档放在一个特定的分支下：
-    docsBranch: 'master',
+    studyBranch: 'master',
     // 默认是 false, 设置为 true 来启用
     editLinks: true,
     // 默认为 "Edit this page"

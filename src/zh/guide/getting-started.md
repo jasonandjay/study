@@ -30,14 +30,14 @@ vuepress build .
 # 将 VuePress 作为一个本地依赖安装
 yarn add -D vuepress # 或者：npm install -D vuepress
 
-# 新建一个 docs 文件夹
-mkdir docs
+# 新建一个 study 文件夹
+mkdir study
 
 # 新建一个 markdown 文件
-echo "# Hello VuePress!" > docs/README.md
+echo "# Hello VuePress!" > study/README.md
 
 # 开始写作
-npx vuepress dev docs
+npx vuepress dev study
 ```
 
 ::: warning
@@ -49,8 +49,8 @@ npx vuepress dev docs
 ``` json
 {
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "study:dev": "vuepress dev study",
+    "study:build": "vuepress build study"
   }
 }
 ```
@@ -58,13 +58,13 @@ npx vuepress dev docs
 然后就可以开始写作了:
 
 ``` bash
-yarn docs:dev # 或者：npm run docs:dev
+yarn study:dev # 或者：npm run study:dev
 ```
 
 要生成静态的 HTML 文件，运行：
 
 ``` bash
-yarn docs:build # 或者：npm run docs:build
+yarn study:build # 或者：npm run study:build
 ```
 
 默认情况下，文件将会被生成在 `.vuepress/dist`，当然，你也可以通过 `.vuepress/config.js` 中的 `dest` 字段来修改，生成的文件可以部署到任意的静态文件服务器上，参考 [部署](./deploy.md) 来了解更多。
