@@ -57,7 +57,8 @@ module.exports = {
               { text: '前端规范', link: '/zh/standard/Standard.md'},
               { text: '项目流程', link: '/zh/standard/Project.md'},
               { text: '前后端交互', link: '/zh/standard/Cooperation.md'},
-              { text: '移动端兼容问题', link: '/zh/standard/Compatibility.md'}
+              { text: '移动端兼容问题', link: '/zh/standard/Compatibility.md'},
+              { text: '项目优化', link: '/zh/standard/Improve.md'}
             ],
           },
           {
