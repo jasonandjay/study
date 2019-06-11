@@ -59,6 +59,7 @@ module.exports = {
               { text: '前后端交互', link: '/zh/standard/Cooperation.md'},
               { text: '移动端兼容问题', link: '/zh/standard/Compatibility.md'},
               { text: '项目优化', link: '/zh/standard/Improve.md'},
+              { text: '浏览器缓存', link: '/zh/standard/Cache.md'},
               { text: '单页面应用', link: '/zh/standard/Spa.md'}
             ],
           },
