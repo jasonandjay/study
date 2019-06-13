@@ -43,7 +43,7 @@ sidebarDepth: 2
     - 把小图标合成雪碧图，不太适用经常更新的移动端开发
     - 把小的图片，字体等资源base64化
     - 开启GZip压缩，减少资源传输大小
-    - 使用强缓存和协商缓存，减少资源重复请求
+    - [使用强缓存和协商缓存，减少资源重复请求](https://jasonandjay.github.io/study/zh/standard/Cache.html)
 
 ## Vue中可以优化的点
 - Vue库dist里面的Runtime-only比Runtime+Compiler小30%
