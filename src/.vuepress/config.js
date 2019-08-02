@@ -69,7 +69,7 @@ module.exports = {
             items: [
               { text: '面试必看', link: '/zh/interview/index.md'},
               { text: '阿里巴巴', link: '/zh/interview/ali.md'},
-              { text: '龙湖地产', link: '/zh/interview/longhu.md'}
+              // { text: '龙湖地产', link: '/zh/interview/longhu.md'}
             ]
           },
           {
@@ -80,9 +80,9 @@ module.exports = {
               { text: 'React', link: '/zh/react/'},
               { text: '小程序', link: '/zh/miniapp/' },
               { text: 'Webpack', link: '/zh/webpack/'},
-              { text: '悦读管理后台', link: '/zh/interface/Yuedu.md'},
-              { text: 'BlackMarket', link: '/zh/interface/BlackMarket.md'},
-              { text: 'TouTiao', link: '/zh/interface/TouTiao.md'}
+              // { text: '悦读管理后台', link: '/zh/interface/Yuedu.md'},
+              // { text: 'BlackMarket', link: '/zh/interface/BlackMarket.md'},
+              // { text: 'TouTiao', link: '/zh/interface/TouTiao.md'}
             ]
           },
           // {
