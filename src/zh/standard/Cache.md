@@ -72,4 +72,4 @@ sidebarDepth: 2
 - 配置超长时间的本地缓存
 - 内容摘要命名资源
 - 静态资源CDN部署
-- 非覆盖式发布策略(https://www.zhihu.com/question/20790576)
+- [非覆盖|增量式发布策略](https://www.zhihu.com/question/20790576)
