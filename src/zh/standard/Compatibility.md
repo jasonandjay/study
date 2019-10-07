@@ -43,8 +43,8 @@ sidebarDepth: 2
     / 设置进行转换的元素的背面在面对用户时是否可见：隐藏 / 
     -webkit-backface-visibility:hidden;
 ### fixed定位问题
-    ios下fixed元素容易定位出错，软键盘弹出时，影响fixed元素定位，会以软键盘的上方为bottom:0;  
-    android下fixed表现要比iOS更好，软键盘弹出时，不会影响fixed元素定位  
+    android下fixed元素容易定位出错，软键盘弹出时，影响fixed元素定位，会以软键盘的上方为bottom:0;  
+    IOS下fixed表现要比Android更好，软键盘弹出时，不会影响fixed元素定位  
     解决：通过屏幕的resize事件重新给fixed元素设置样式
 ### 300ms延迟问题
     浏览器如何判断快速点击时要区分单击事件和双击屏幕缩放的历史原因造成的，当用户在屏幕上单击某一个元素时候，  
