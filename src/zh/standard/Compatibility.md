@@ -103,6 +103,7 @@ sidebarDepth: 2
     UA.winClient = (s = ua.match(/winclient/)) ? !!s : false; // 是否pc客户端
 ### rem计算
     /**
+     * JS版本
      * 以750为基础做适配，1rem = 100px, 1rem = 100rpx;
      * 监听pc端的resize事件和mobile的横屏（orientationchange）事件
      */
@@ -122,6 +123,13 @@ sidebarDepth: 2
       doc.addEventListener('DOMContentLoaded', recalc, false);
     }
     fun(document, window);
+
+    /**
+     * CSS版本
+     */
+    html{
+        font-size: calc(100vw / 750 * 100);
+    }
 ### 多倍屏处理
     通过媒体查询中的宽高和dpr做判断
     /* iphone 3 */

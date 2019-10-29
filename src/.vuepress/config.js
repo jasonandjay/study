@@ -69,6 +69,7 @@ module.exports = {
             items: [
               { text: '面试必看', link: '/zh/interview/index.md'},
               { text: '阿里巴巴', link: '/zh/interview/ali.md'},
+              { text: '三年前端', link: '/zh/interview/threeYear.md'},
               // { text: '龙湖地产', link: '/zh/interview/longhu.md'}
             ]
           },
