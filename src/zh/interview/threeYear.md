@@ -1,3 +1,9 @@
+---
+title: 面试必会
+sidebar: auto
+sidebarDepth: 2
+---
+
 # [“寒冬”三年经验前端面试总结（含头条、百度、饿了么、滴滴等）](https://juejin.im/post/5d9c2005f265da5bb977c55e)
 
 ## CSS
@@ -193,16 +199,55 @@ arr.sort(()=>Math.random()-.5)
 
 ### 手写call, apply和bind
 ```js
-Object.prototype.MyCall = function(){
+Object.prototype.myCall = function(context){
+    if(typeof this != 'function'){
+        throw new TypeError('this is not a function')
+    }
+    context.fn = this;
+    var result= [];
+    var args = [];
+    for(var i = 1; i< arguments.length; i++){
+        args.push('arr[' + i + ']')
+    }
+    result = eval('context.fn(' +args+ ')');
 
+    delete context.fn;
+    return result;
 }
 
-Object.prototype.MyApply = function(){
-
+Object.prototype.myApply = function(context, arr){
+    if(typeof this != 'function'){
+        throw new TypeError('this is not a function')
+    }
+    context.fn = this;
+    var result= [];
+    if(!arr){
+        result = context.fn()
+    }else{
+        var args = [];
+        for(var i = 0; i< arr.length; i++){
+            args.push('arr[' + i + ']')
+        }
+        result = eval('context.fn(' +args+ ')');
+    }
+    delete context.fn;
+    return result;
 }
 
-Object.prototype.MyBind = function(){
-
+Object.prototype.myBind = function(){
+    if(typeof this != 'function'){
+        throw new TypeError('this is not a function')
+    }
+    var self = this;
+    var args = Array.prototype.slice.call(arguments,1);
+    var F = function(){};
+    F.prototype = this.prototype;
+    var bound = function(){
+        var bindArgs = Array.prototype.slice.call(arguments);
+        return self.apply(this instanceof F ? this: context, args.concat(bindArgs))
+    };
+    bound.prototype = new F();
+    return bound;
 }
 ```
 
@@ -210,4 +255,224 @@ Object.prototype.MyBind = function(){
 ```js
 1. 原型链
 实例，构造函数，原型对象
+
+2. new的过程, 构造函数Func, 实例obj
+var obj = new Func();
+相等于
+var obj = null;
+obj.__propto__ = Func.proptotype;
+Func.call(obj);
+
+3. 无new实例化
+Func(){
+    if (!this instanceof Func){
+        return new Func(arguments);
+    }
+}
 ```
+
+### sleep函数
+```js
+// 链式调用+无new实例化+event loop
+// 1. 测试构造函数
+Person('li');
+// This is li
+
+// 2. 测试sleep
+Person('li').sleep(10).eat('danner')
+
+// This is li
+// ...等待10ms
+// sleep after 10
+// eat danner
+
+// 3. 测试sleepFirst和sleep
+Person('li').sleepFirst(5000).eat('danner').sleep(3000).eat('food').sleep(3000).eat(123);
+// ...等待5s
+// sleep before 5000
+// This is li
+// eat dinner
+// sleep after 3000
+// eat food
+// sleep after 3000
+// eat 123
+         
+
+function Person(name){
+    if (this instanceof Person){
+        // 设置任务队列
+        this.queues = [];
+        // 把初始化的任务放入队列
+        this.queues.push({
+            delay: 0,
+            cb: ()=> console.log(`This is ${name}`)
+        })
+        // 异步调用run方法执行队列
+        setTimeout(()=>{
+            this.run();
+        });
+    }else{
+        // 无new实例化
+        return new Person(name);
+    }
+}
+
+Person.prototype.run = async function(){
+    // 调用for循环阻塞任务队列的执行
+    for (let i=0, len=this.queues.length; i<len; i++){
+        let item = this.queues[i];
+        if (item.delay){
+            await this.toPromise(item.cb, item.delay)();
+        }else{
+            await item.cb();
+        }
+    }
+}
+
+Person.prototype.toPromise = function(cb, delay){
+    // 把一个有延迟的函数转化为promise，延迟时间为状态改为resolve的时间
+    return function(){
+        return new Promise((resolve, reject)=>{
+            setTimeout(function(){
+                cb();
+                resolve();
+            }, delay);
+        })
+    }
+}
+
+Person.prototype.sleep = function(delay){
+    this.queues.push({  
+        delay,
+        cb: ()=>console.log(`sleep after ${delay}`)
+    })
+    return this;
+}
+
+Person.prototype.eat = function(food){
+    this.queues.push({  
+        delay: 0,
+        cb: ()=>console.log(`eat ${food}`)
+    })
+    return this;
+}
+
+Person.prototype.sleepFirst = function(delay){
+    this.queues.unshift({  
+        delay: delay,
+        cb: ()=>console.log(`sleep before ${delay}`)
+    })
+    return this;
+}
+```
+
+### [实现promise](https://jasonandjay.github.io/study/zh/interview/ali.html#_1-es6)
+- 一. 先执行Promise的参数，保存结果，当调用then的时候执行真正的回调
+- 二. 利用异步让Promise构造函数内部的resolve和reject晚于真正的回调执行
+
+### Promise.all,思路就是轮询
+```js
+Promise.all = function(arr){
+    return new Promise((resolve,reject) => {
+        if(!Array.isArray(arr)){
+            throw new TypeError(`argument must be a array`)
+        }
+        var length = arr.length;
+        var resolveNum = 0;
+        var resolveResult = [];
+        for(let i = 0; i < length; i++){
+            arr[i].then(data => {
+                resolveNum++;
+                resolveResult.push(data)
+                if(resolveNum == length){
+                    return resolve(resolveResult)
+                }
+            }).catch(data => {
+                return reject(data)
+            })
+        }
+    })
+}
+```
+
+### Promise.retry
+```js
+Promise.retry = function(fn, times, delay) {
+    return new Promise(function(resolve, reject){
+        var error;
+        var attempt = function() {
+            if (times == 0) {
+                reject(error);
+            } else {
+                fn().then(resolve)
+                    .catch(function(e){
+                        times--;
+                        error = e;
+                        setTimeout(function(){attempt()}, delay);
+                    });
+            }
+        };
+        attempt();
+    });
+};
+```
+
+### eventEmitter|发布订阅|Dom三级事件
+```js
+class EventEmitter{
+    store = {}
+
+    on(type, cb, once=false){
+        if (this.store[type] && this.store[type].cb.length){
+            this.store[type].push(cb);
+        }else{
+            this.store[type] = {cb: [cb], once}
+        }
+    }
+
+    emit(type, payload){ 
+        if (this.store[type]){
+            this.store[type].cb.forEach(item=>{
+              item(payload);
+            })
+            if (this.store[type].once){
+                delete this.store[type];
+            }
+        }
+    }
+
+    off(type, cb){
+        if (this.store[type]){
+            var index = this.store[type].cb.findIndex(item=>item===cb);
+            this.store[type].cb.splice(index, 1);
+        }
+    }
+
+    once(type, cb){
+        this.on(type, cb, true);
+    }
+}
+```
+
+### 实现instanceof
+```js
+function myInstanceof(left,right){
+    // 实例的原型对象
+    var proto = left.__proto__;
+    // 构造函数的原型对象
+    var protoType = right.prototype;
+    while(true){
+        if(proto === null){
+            return false
+        }
+        if(proto == protoType){
+            return true
+        }
+        proto = proto.__proto__
+    }
+}
+```
+
+### 实现数组flat，filter
+### 函数柯里化
+### EventLoop
