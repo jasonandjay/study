@@ -61,7 +61,10 @@ module.exports = {
               { text: '项目优化', link: '/zh/standard/Improve.md'},
               { text: '浏览器缓存', link: '/zh/standard/Cache.md'},
               { text: '单页面应用', link: '/zh/standard/Spa.md'},
-              { text: '网络安全', link: '/zh/standard/Security.md'}
+              { text: '网络安全', link: '/zh/standard/Security.md'},
+              { text: '前端自动化部署', link: '/zh/standard/Deploy.md'},
+              { text: 'Webpack的loader和plugin', link: '/zh/standard/Webpack.md'},
+              
             ],
           },
           {
@@ -81,6 +84,7 @@ module.exports = {
               { text: 'React', link: '/zh/react/'},
               { text: '小程序', link: '/zh/miniapp/' },
               { text: 'Webpack', link: '/zh/webpack/'},
+              { text: 'React Hooks', link: '/zh/standard/Hooks.md'},
               // { text: '悦读管理后台', link: '/zh/interface/Yuedu.md'},
               // { text: 'BlackMarket', link: '/zh/interface/BlackMarket.md'},
               // { text: 'TouTiao', link: '/zh/interface/TouTiao.md'}

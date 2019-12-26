@@ -474,5 +474,154 @@ function myInstanceof(left,right){
 ```
 
 ### 实现数组flat，filter
-### 函数柯里化
+```js
+// 数组扁平化
+toString().split(',')
+
+// 展平一级
+function flat(arr){
+    var result = [];
+    for(var i = 0; i < arr.length; i++){
+        if(Array.isArray(arr[i])){
+            result = result.concat(flat(arr[i]))
+        }else{
+            result.push(arr[i]);
+        }
+    }
+    return result;
+}
+
+//展平多层
+function flattenByDeep(array,deep){
+    var result = [];
+    for(var i = 0 ; i < array.length; i++){
+        if(Array.isArray(array[i]) && deep >= 1){
+            result = result.concat(flattenByDeep(array[i],deep -1))
+        }else{
+            result.push(array[i])
+        }
+    }
+    return result;
+}
+
+// 数组过滤
+Array.prototype.myFilter = function(fn,context){
+    if(typeof fn != 'function'){
+        throw new TypeError(`${fn} is not a function`)
+    }
+    let arr = this;
+    let reuslt = []
+    for(var i = 0;i < arr.length; i++){
+        let temp= fn.call(context,arr[i],i,arr);
+        if(temp){
+            result.push(arr[i]);
+        }
+    }
+    return result
+}
+
+Array.prototype.myForeach = function(fn,context){
+    if(typeof fn != 'function'){
+        throw new TypeError(`${fn} is not a function`)
+    }
+    let arr = this;
+    for(var i = 0;i < arr.length; i++){
+        fn.call(context,arr[i],i,arr);
+    }
+}
+
+Array.prototype.myMap = function(fn,context){
+    if(typeof fn != 'function'){
+        throw new TypeError(`${fn} is not a function`)
+    }
+    let arr = this;
+    let reuslt = []
+    for(var i = 0;i < arr.length; i++){
+        result.push(fn.call(context,arr[i],i,arr));
+    }
+    return result;
+}
+```
+
+### [函数柯里化](https://www.jianshu.com/p/2975c25e4d71)
+```js
+function currying(fn,...args){
+    if(fn.length <= args.length){
+        return fn(...args)
+    }
+    return function(...args1){
+        return currying(fn,...args,...args1)
+    }
+}
+function add(a,b,c){
+    return a + b + c
+}
+add(1,2,3) // 6
+var curryingAdd = currying(add);
+curryingAdd(1)(2)(3) // 6
+
+
+
+// 柯里化+toString隐式转换
+function add() {
+    // 第一次执行时，定义一个数组专门用来存储所有的参数
+    var _args = Array.prototype.slice.call(arguments);
+
+    // 在内部声明一个函数，利用闭包的特性保存_args并收集所有的参数值
+    var _adder = function() {
+        _args.push(...arguments);
+        return _adder;
+    };
+
+    // 利用toString隐式转换的特性，当最后执行时隐式转换，并计算最终的值返回
+    _adder.toString = function () {
+        return _args.reduce(function (a, b) {
+            return a + b;
+        });
+    }
+    return _adder;
+}
+
+add(1)(2)(3)                // 6
+add(1, 2, 3)(4)             // 10
+add(1)(2)(3)(4)(5)          // 15
+add(2, 6)(1)                // 9
+```
+
 ### EventLoop
+任务队列分为同步任务，宏任务（定时器），微任务（Promise）
+执行优先级：同步>异步，微任务>宏任务
+执行顺序：按照加入队列的顺序
+```js
+console.log(1);     // 1.第一个同步任务
+
+setTimeout(() => {
+    console.log(2);     // 7.第一个宏任务
+    Promise.resolve().then(() => {
+        console.log(3)  // 8.第一个宏任务中的微任务
+    });
+});
+
+new Promise((resolve, reject) => {
+    console.log(4)      // 2.第二个同步立即执行的同步任务
+    resolve(5)
+}).then((data) => {
+    console.log(data);  // 4. 第一个微任务
+
+    Promise.resolve().then(() => {
+        console.log(6)  // 5. 第二个微任务
+    }).then(() => {
+        console.log(7)  // 6.第三个微任务
+        
+        setTimeout(() => {
+            console.log(8)  //10. 第三个宏任务
+        }, 0);
+    });
+})
+
+setTimeout(() => {
+    console.log(9);     // 9. 第二个宏任务
+})
+
+console.log(10);    // 3.同步任务
+```
