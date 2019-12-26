@@ -48,7 +48,7 @@ npm run build
 - Send pr to add excellent content
 - Help us improve our content on exist pages  
 
-![improve](/src/.vuepress/public//img/improve.png)
+![improve](/src/.vuepress/public//img/improve.png).
 
 ## License
 
