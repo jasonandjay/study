@@ -44,8 +44,10 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 ![插件列表](/study/FastStoneEditor.jpg)
 
 ## 沟通工具
-- 邮箱
+- 企业邮箱
+- 企业微信
 - 钉钉
+- 百度Hi
 
 ## 如何解决问题
 ### 常用方法

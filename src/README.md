@@ -5,7 +5,7 @@ actionText: Let`s Go →
 actionLink: /zh/standard/Start.html
 sidebarDepth: 2
 sidebar: auto
-footer: MIT Licensed | Copyright © 1970-present Jasonandjay
+footer: MIT Licensed | Copyright © 2018-present Jasonandjay
 ---
 
 <div style="text-align: center">
@@ -44,5 +44,7 @@ vuepress build
 ```
 
 ::: warning 兼容性注意事项
-VuePress 要求 Node.js >= 8。
+- VuePress 要求 Node.js >= 8
+- 知识点总结需要持之以恒的积累
+- 立目标，定计划，不断总结，持续超越
 :::
