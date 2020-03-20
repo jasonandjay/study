@@ -86,6 +86,7 @@ module.exports = {
               { text: '小程序', link: '/zh/miniapp/' },
               { text: 'Webpack', link: '/zh/webpack/'},
               { text: 'React Hooks', link: '/zh/standard/Hooks.md'},
+              { text: 'TypeScript', link: '/zh/summary/typescript.md'},
               // { text: '悦读管理后台', link: '/zh/interface/Yuedu.md'},
               // { text: 'BlackMarket', link: '/zh/interface/BlackMarket.md'},
               // { text: 'TouTiao', link: '/zh/interface/TouTiao.md'}
