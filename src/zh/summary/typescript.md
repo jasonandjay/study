@@ -21,7 +21,7 @@ tsc --help
 tsc --init
 ```
 
-## TS语法
+## TS基础知识
 ### 原始类型
 - boolean、number、string、undefined、null、symbol、void、bigint
 > 小写表示ts的类型，大写的Boolean、Number、String是 JavaScript 的构造函数
@@ -127,7 +127,14 @@ class Stack<T> {
     }
 }
 ```
-- 使用继承约束泛型
+- 泛型约束
+```js
+function pick<T, K extends keyof T>(o: T, names: K[]): T[K][] {
+    return names.map(n => o[n]);
+}
+// K extends keyof T 约定前者属于后者
+```
+
 - 泛型约束与索引类型
 ```js
 function getValue<T extends object, U extends keyof T>(obj: T, key: U) {

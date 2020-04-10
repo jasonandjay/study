@@ -114,9 +114,18 @@ sidebarDepth: 2
               var clientWidth = docEl.clientWidth;
               if (!clientWidth) return;
 
+                var fontEl = document.createElement('style');
+                var metaEl = document.querySelector('meta[name="viewport"]');
+
+                var dpr = window.devicePixelRatio || 1;
+                scale = 1 / dpr;
+                // 设置viewport，进行缩放，达到高清效果
+                metaEl.setAttribute('content', 'width=' + dpr * docEl.clientWidth + ',initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale + ',user-scalable=no');
+                // 设置data-dpr属性，留作的css hack之用，解决图片模糊问题和1px细线问题
+                docEl.setAttribute('data-dpr', dpr);
               //这里是假设在750px宽度设计稿的情况下，1rem = 100px；
               //可以根据实际需要修改
-              docEl.style.fontSize =  (clientWidth / 750)*100 + 'px';
+              docEl.style.fontSize =  (clientWidth*dpr / 750)*100 + 'px';
           };
       if (!doc.addEventListener) return;
       win.addEventListener(resizeEvt, recalc, false);
