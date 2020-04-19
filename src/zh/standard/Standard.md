@@ -1,10 +1,11 @@
 ---
 sidebar: auto
-sidebarDepth: 2
+sidebarDepth: 1
 ---
 
 ## 前端规范系列
 [从零开始制定规范](https://juejin.im/post/5d3a7134f265da1b5d57f1ed)
+
 ## 命名规范
 
 1 避免单字母的名字。用你的命名来描述功能（最好使用动词命名）。 
@@ -60,7 +61,7 @@ sidebarDepth: 2
   ];
   ```
 
-## 变量
+### 变量
 
 1 使用 const 或者 let 来定义变量。避免污染全局命名空间。（最好使用名词命名）
   把 const 声明的放在一起，把 let 声明的放在一起。.
@@ -100,7 +101,7 @@ sidebarDepth: 2
   // 对于 `const` 也一样
   ```
 
-## 注释
+### 注释
 
 1 使用 /** ... */ 来进行多行注释。
   ```
@@ -125,7 +126,7 @@ sidebarDepth: 2
   }
   ```
 
-## 空格
+### 空格
 
 1 使用 tabs (空格字符) 设置为 2 个空格。
   ```
@@ -194,7 +195,7 @@ sidebarDepth: 2
   ```
 11 在行的末尾避免使用空格。
 
-## 分号
+### 分号
   
   每一行结束加分号结尾
   ```
@@ -205,7 +206,7 @@ sidebarDepth: 2
   });
   ```
 
-## 方法
+### 方法
 
 1 使用命名的函数表达式代替函数声明。
   函数声明是挂起的，这意味着在它在文件中定义之前，很容易引用函数。这会损害可读性和可维护性。
@@ -253,7 +254,7 @@ sidebarDepth: 2
   new Date(...[2016, 8, 5]);
   ```
 
-## 箭头函数
+### 箭头函数
 
 1 当你必须使用匿名函数时 (当传递内联函数时)， 使用箭头函数。 
   它创建了一个在 this 上下文中执行的函数版本，它通常是你想要的，并且是一个更简洁的语法。
@@ -303,7 +304,7 @@ sidebarDepth: 2
   )
   ```
 
-## 类和构造器
+### 类和构造器
 
 1 尽量使用 class. 避免直接操作 prototype .
   class 语法更简洁，更容易推理。
@@ -456,7 +457,7 @@ sidebarDepth: 2
   const binary = 2 ** 10;
   ```
 
-## 比较运算符和等号
+### 比较运算符和等号
 
 1 使用 === 和 !== 而不是 == 和 !=。 
 
@@ -532,7 +533,7 @@ sidebarDepth: 2
   const bar = a + b / c * d;
   ```
 
-## 块
+### 块
 
 1 当有多行代码块的时候，使用大括号包裹。
   ```
@@ -574,88 +575,102 @@ sidebarDepth: 2
   ```
 
   ## ESlint
-    ```
-    module.exports = {
+  ### ESlint基础知识
+  - ESLint中规则第一个值是错误级别，可以使下面的值之一：
+      - "off" or 0 - 关闭规则
+      - "warn" or 1 - 将规则视为一个警告（不会影响退出码）
+      - "error" or 2 - 将规则视为一个错误 (退出码为1)  
+  - ESLint启用推进规则
+  ```js
+  "extends": "eslint:recommended"
+  ```
+  - ESLint自动修复功能
+  ```js
+    eslint --fix
+  ```
+  - 常见.eslintrc配置文件解析
+  ```js
+  module.exports = {
 
-      //此项是用来告诉eslint找当前配置文件不能往父级查找
-      root: true,
+    //此项是用来告诉eslint找当前配置文件不能往父级查找
+    root: true,
 
-      //此项是用来指定eslint解析器的，解析器必须符合规则，babel-eslint解析器是对babel解析器的包装使其与ESLint解析
-      parser: 'babel-eslint',
+    //此项是用来指定eslint解析器的，解析器必须符合规则，babel-eslint解析器是对babel解析器的包装使其与ESLint解析
+    parser: 'babel-eslint',
 
-      //此项是用来指定javaScript语言类型和风格，sourceType用来指定js导入的方式，默认是script，此处设置为module，指某块导入方式
-      parserOptions: {
-        // 设置 script(默认) 或 module，如果代码是在ECMASCRIPT中的模块
-        sourceType: 'module',
-        "ecmaVersion": 6,
-        "ecmaFeatures": {
-          "jsx": true
-        }
-      },
-
-      // 此项指定环境的全局变量，下面的配置指定为浏览器环境
-      env: {
-        "browser": true,
-        "node": true,
-        "commonjs": true,
-        "es6": true,
-        "amd": true
-      },
-      
-      // 此项是用来配置标准的js风格，就是说写代码的时候要规范的写，如果你使用vs-code我觉得应该可以避免出错
-      extends: 'vue',
-      // 此项是用来提供插件的，插件名称省略了eslint-plugin-，下面这个配置是用来规范html的
-      plugins: [
-        'html',
-        "flow-vars", 
-        "react"
-      ],
-
-      /* 
-      下面这些rules是用来设置从插件来的规范代码的规则，使用必须去掉前缀eslint-plugin-
-        主要有如下的设置规则，可以设置字符串也可以设置数字，两者效果一致
-        "off" -> 0 关闭规则
-        "warn" -> 1 开启警告规则
-        "error" -> 2 开启错误规则
-      */
-      rules: {
-        // 警告
-        "no-extra-parens": 1, // 非必要的括号
-        "no-empty": 1, // 块语句中的内容不能为空
-        "no-use-before-define": [1, "nofunc"], // 未定义前不能使用
-        "no-unused-vars": 1, // 不能有声明后未被使用的变量或参数
-        "no-undef": 1, // 不可以 有未定义的变量
-        // vue
-        "flow-vars/define-flow-type": 1,
-        "flow-vars/use-flow-type": 1,
-
-        // react
-        "react/jsx-uses-react": 2,
-        "react/jsx-uses-vars": 2,
-
-        // 代码风格
-        "no-multi-spaces": 1, // 不能用多余的空格
-        "key-spacing": [1, {  // 对象字面量中冒号的前后空格
-          "beforeColon": false,
-          "afterColon": true
-        }],
-        "block-scoped-var": 2, // 块语句中使用var
-        "consistent-return": 2, // return 后面是否允许省略
-        "accessor-pairs": 2, // 在对象中使用getter/setter
-        "no-return-assign": [2, "always"], // return 语句中不能有赋值表达式
-        "no-redeclare": [2, {   // 禁止重复声明变量
-          "builtinGlobals": true
-        }],
-        "space-infix-ops": 2, // 中缀操作符周围要不要有空格
-        "curly": 1, // 必须使用 if(){} 中的{}
-
-        // common js
-        "no-duplicate-imports": 1
+    //此项是用来指定javaScript语言类型和风格，sourceType用来指定js导入的方式，默认是script，此处设置为module，指某块导入方式
+    parserOptions: {
+      // 设置 script(默认) 或 module，如果代码是在ECMASCRIPT中的模块
+      sourceType: 'module',
+      "ecmaVersion": 6,
+      "ecmaFeatures": {
+        "jsx": true
       }
+    },
+
+    // 此项指定环境的全局变量，下面的配置指定为浏览器环境
+    env: {
+      "browser": true,
+      "node": true,
+      "commonjs": true,
+      "es6": true,
+      "amd": true
+    },
+    
+    // 此项是用来配置标准的js风格，就是说写代码的时候要规范的写，如果你使用vs-code我觉得应该可以避免出错
+    extends: 'vue',
+    // 此项是用来提供插件的，插件名称省略了eslint-plugin-，下面这个配置是用来规范html的
+    plugins: [
+      'html',
+      "flow-vars", 
+      "react"
+    ],
+
+    /* 
+    下面这些rules是用来设置从插件来的规范代码的规则，使用必须去掉前缀eslint-plugin-
+      主要有如下的设置规则，可以设置字符串也可以设置数字，两者效果一致
+      "off" -> 0 关闭规则
+      "warn" -> 1 开启警告规则
+      "error" -> 2 开启错误规则
+    */
+    rules: {
+      // 警告
+      "no-extra-parens": 1, // 非必要的括号
+      "no-empty": 1, // 块语句中的内容不能为空
+      "no-use-before-define": [1, "nofunc"], // 未定义前不能使用
+      "no-unused-vars": 1, // 不能有声明后未被使用的变量或参数
+      "no-undef": 1, // 不可以 有未定义的变量
+      // vue
+      "flow-vars/define-flow-type": 1,
+      "flow-vars/use-flow-type": 1,
+
+      // react
+      "react/jsx-uses-react": 2,
+      "react/jsx-uses-vars": 2,
+
+      // 代码风格
+      "no-multi-spaces": 1, // 不能用多余的空格
+      "key-spacing": [1, {  // 对象字面量中冒号的前后空格
+        "beforeColon": false,
+        "afterColon": true
+      }],
+      "block-scoped-var": 2, // 块语句中使用var
+      "consistent-return": 2, // return 后面是否允许省略
+      "accessor-pairs": 2, // 在对象中使用getter/setter
+      "no-return-assign": [2, "always"], // return 语句中不能有赋值表达式
+      "no-redeclare": [2, {   // 禁止重复声明变量
+        "builtinGlobals": true
+      }],
+      "space-infix-ops": 2, // 中缀操作符周围要不要有空格
+      "curly": 1, // 必须使用 if(){} 中的{}
+
+      // common js
+      "no-duplicate-imports": 1
     }
-    ```
-## ESlint2
-    ```
+  }
+  ```
+### 常用ESlint ruler
+```js
     "no-caller": 1,//禁止使用arguments.caller或arguments.callee
     "no-dupe-keys": 2,//在创建对象字面量时不允许键重复 {a:1,a:1}
     "no-empty": 2,//块语句中的内容不能为空
@@ -692,10 +707,10 @@ sidebarDepth: 2
     "eqeqeq": 2,//必须使用全等
     "func-style": [0, "declaration"],//函数风格，规定只能使用函数声明/函数表达式
     "indent": [2, 4],//缩进风格
-    ```
+```
 
 ## 目录规范
-
+```js
 ├── build                      // 构建相关  
 ├── config                     // 配置相关  
 ├── src                        // 源代码  
@@ -725,3 +740,26 @@ sidebarDepth: 2
 ├── favicon.ico                // favicon图标  
 ├── index.html                 // html模板  
 └── package.json               // package.json  
+```
+
+## 数据流向规范
+
+![数据流向](/study/standard/dataflow.png)
+
+## Git Flow
+采用"上游优先"（upsteam first）原则，即只存在一个主分支master，它是所有其他分支的"上游"。只有上游分支采纳的代码变化，才能应用到其他分支。
+
+- 分支约定
+  - 远程分支
+    - 主分支：master分支
+    - 预发分支：pre-production
+    - 生产分支: production
+  - 本地分支
+    - 每个开发者基于master拉取一个分支，合并和同步代码
+
+- 合并流向
+  - 功能发布：功能开发完毕，经过自测和测试合并到master分支，通过预发环境测试，合并到生产环境分支
+  - bug修复：生产环境出现bug，新建功能分支，先合并到master，再cherry-pick到pre-production，最后合并到master分支
+
+- 版本发布  
+  每一个稳定版本，都要从master分支拉出一个分支，比如1.0.0、1.1.1等等。
