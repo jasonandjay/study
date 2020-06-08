@@ -61,6 +61,21 @@ changeCondition2(yes)->hisPushHistory->hisCodePushHistory
 changeCondition2(no)->hisPeplaceHistory->hisCodeReplaceHistory
 ``` -->
 
+## 路由优缺点
+### hash模式
+- 优点
+    - 简单，不需要服务端支持即可以完成路由跳转
+
+- 缺点
+    - url比较丑，不像一个真正的资源地址
+    - hash只存在于前端页面，用于锚点功能，当服务端往前端跳转地址的时候并不能正确携带hash部分，
+    导致路由丢失（如微信公众号登陆回跳业务逻辑页面，第三方支付回跳支付详情）
+
+### history/browser
+- 优点
+    - url地址比较优雅，像一个真正的资源地址
+- 缺点
+    - url并不是一个真正的资源地址，直接访问会出现资源404，需要服务端配合做重定向（开发环境，devServer中配置historyApiFallback，线上使用nginx或者apache做404的重定向index.html）
 
 ## 实现流程
 ![流程](http://assets.processon.com/chart_image/5cc6ac6be4b08b66b9c0080a.png)
@@ -205,6 +220,20 @@ changeCondition2(no)->hisPeplaceHistory->hisCodeReplaceHistory
 </body>
 </html>
 ```
+
+## history404重定向解决
+### 开发环境
+```js
+module.exports = {
+    devServer: {
+        port: 3000,
+        open: true,
+        // 404重定向到index.html
+        historyApiFallback: true
+    }
+}
+```
+### [线上环境](https://router.vuejs.org/zh/guide/essentials/history-mode.html#%E5%90%8E%E7%AB%AF%E9%85%8D%E7%BD%AE%E4%BE%8B%E5%AD%90)
 
 ## 兼容问题
 
