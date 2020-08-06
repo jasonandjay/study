@@ -75,8 +75,34 @@ LM-Factor算法的逻辑：
 - 内容摘要命名资源，每次文件修改后就会重新命名资源
 - 通过更新页面中引用的资源路径，让浏览器主动放弃缓存，加载新资源
 
+## webpack热更新的原理
+基本原理，webpack监听文件变化，服务端和客户端有websocket通信，服务端想客户端发送文件变化消息，
+客户端根据文件变化消息获取变更模块代码，进行模块代码的热替换
+
+1. 配置开启热更新，设置entry格式和webpack-dev-server的option，使得打包的bundle里面包含HMR runtime和websocket连接的代码
+2. webpack-dev-server通过express启动服务端
+3. 客户端通过sockjs和服务端建立websocket长连接
+4. webpack监听文件变化，文件保存触发webpack重新编译，编译后的代码保存在内存中，不在output.path中产生输出
+5. 编译会生成hash值，hot-update.json(已改动模块的json)，hot-update.js(已改动模块的js)
+6. 通过socket想客户端发送hash值
+7. 客户端对比hash值，一致在走缓存，不一致则
+通过ajax获取hot-update.json，json包含模块hash值
+再通过jsonp请求获取hot-update.js
+8. 热更新js模块，若失败，则live reload刷新浏览器代替热更新（若模块未配置热更新，则同样live reload）
+
 ## 缓存的存在如何部署和更新前端代码
 - 配置超长时间的本地缓存
 - 内容摘要命名资源
 - 静态资源CDN部署
 - [非覆盖|增量式发布策略](https://www.zhihu.com/question/20790576)
+
+## Nginx配置静态文件缓存
+```js
+  location ~* \.(css|js|png|jpg|jpeg|gif|gz|svg|mp4|ogg|ogv|webm|htc|xml|woff)$ {
+    # 同上，通配所有以.css/.js/...结尾的请求
+    # ~*表示匹配任意文件夹
+    # \转义字符
+    access_log off;
+    add_header    Cache-Control  max-age=360000;
+  }
+```
