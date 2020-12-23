@@ -14,6 +14,8 @@ sidebarDepth: 2
 git config --global user.name "your name"  
 git config --global user.email "you email"
 ```
+- 常用命令
+![git操作](/study/security/git操作.png)
 ### Node环境
 - [安装教程](https://www.cnblogs.com/zhouyu2017/p/6485265.html)
 - 可以查看到node版本和npm版本即可
