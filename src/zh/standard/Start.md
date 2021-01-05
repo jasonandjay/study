@@ -8,14 +8,15 @@ sidebarDepth: 2
 
 ### Git环境
 - [安装和公钥/私钥的配置](https://www.cnblogs.com/joyho/articles/4062574.html)
-- [常用命令](https://github.com/jasonandjay/project)
 - 提交之前需要配置全局用户和密码，git commit的时候需要  
 ```
 git config --global user.name "your name"  
 git config --global user.email "you email"
 ```
-- 常用命令  
-![git操作](/study/security/git commnd.png)
+- 常用操作命令  
+
+![git操作](/study/security/gitcommnd.png)
+
 ### Node环境
 - [安装教程](https://www.cnblogs.com/zhouyu2017/p/6485265.html)
 - 可以查看到node版本和npm版本即可
