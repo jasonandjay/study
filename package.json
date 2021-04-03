@@ -42,6 +42,7 @@
   "dependencies": {
     "@babel/core": "7.0.0-beta.47",
     "@vue/babel-preset-app": "3.0.0-beta.11",
+    "@vuepress/plugin-search": "^1.8.2",
     "autoprefixer": "^8.2.0",
     "babel-loader": "8.0.0-beta.3",
     "cache-loader": "^1.2.2",

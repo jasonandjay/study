@@ -24,6 +24,11 @@ module.exports = {
   ],
   serviceWorker: true,
   theme: 'vue',
+  plugins: [
+    ['@vuepress/search', {
+      searchMaxSuggestions: 10
+    }]
+  ],
   themeConfig: {
     repo: 'jasonandjay/study',
 
