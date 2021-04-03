@@ -8,7 +8,7 @@ module.exports = {
     '/': {
       lang: 'zh-CN',
       title: '前端知识点总结',
-      description: '编程的魅力在于以最小的成本探索未知的世界'
+      description: '编程的魅力在于能以最小的成本探索未知的世界'
     }
   },
   head: [
@@ -65,8 +65,7 @@ module.exports = {
               { text: '渐进式web应用', link: '/zh/standard/Pwa.md'},
               { text: '网络安全', link: '/zh/standard/Security.md'},
               { text: '前端自动化部署', link: '/zh/standard/Deploy.md'},
-              { text: 'Webpack的loader和plugin', link: '/zh/standard/Webpack.md'},
-              
+              { text: 'Webpack的loader和plugin', link: '/zh/standard/Webpack.md'}
             ],
           },
           {
@@ -76,6 +75,15 @@ module.exports = {
               // { text: '阿里巴巴', link: '/zh/interview/ali.md'},
               { text: '三年前端', link: '/zh/interview/threeYear.md'},
               // { text: '龙湖地产', link: '/zh/interview/longhu.md'}
+            ]
+          },
+          {
+            text: '源码解析',
+            items: [
+              { text: '如何学习源码', link: '/zh/origin/start.md'},
+              { text: 'Lodash源码', link: '/zh/origin/lodash.md'},
+              { text: 'Vue系列', link: '/zh/origin/vue.md'},
+              { text: 'React系列', link: '/zh/origin/react.md'}
             ]
           },
           {
