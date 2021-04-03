@@ -3,10 +3,9 @@ sidebar: auto
 sidebarDepth: 2
 ---
 
-# Progressive Web Application
-
+# PWA
 ## 背景
-PWA 全称是渐进式 web 应用，它是用一系列前端技术来实现的，目标是提供类似原生APP一样的体验。
+PWA(Progressive Web Application)全称是渐进式 web 应用，它是用一系列前端技术来实现的，目标是提供类似原生APP一样的体验。
 ### 解决的问题：
 - Web 的用户体验
     - 首屏加载速度

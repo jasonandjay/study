@@ -3,9 +3,6 @@ sidebar: auto
 sidebarDepth: 2
 ---
 # React Hooks
-
-
-
 ## 简介
 ### 什么是Hooks
 Hooks是一个新的React特性提案，组件尽量写成纯函数，如果需要外部React特性（比如状态管理，生命周期），就用钩子把外部特性"钩"进来，通常函数名字都是以use开头。首次在v16.7.0-alpha版本中添加，在v16.8.0中正式发布。
