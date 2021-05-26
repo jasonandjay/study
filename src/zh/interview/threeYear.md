@@ -424,7 +424,7 @@ class EventEmitter{
 
     on(type, cb, once=false){
         if (this.store[type] && this.store[type].cb.length){
-            this.store[type].push(cb);
+            this.store[type].cb.push(cb);
         }else{
             this.store[type] = {cb: [cb], once}
         }
