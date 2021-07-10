@@ -216,6 +216,8 @@ React 16.0前后Reconciler层的改动:
 阶段一，生成 Fiber 树，得出需要更新的节点信息。这一步是一个渐进的过程，可以被打断  
 阶段二，将需要更新的节点一次过批量更新，这个过程不能被打断
 
+[Fiber VS Stack](https://claudiopro.github.io/react-fiber-vs-stack-demo/)
+
 图解两者的区别
 ![stack_reconciler](/study/hooks/stack_reconciler.png)
 **stack reconciler**
