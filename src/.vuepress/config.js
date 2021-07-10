@@ -8,7 +8,7 @@ module.exports = {
     '/': {
       lang: 'zh-CN',
       title: '前端知识点总结',
-      description: '编程的魅力在于能以最小的成本探索未知的世界'
+      description: '编程的魅力在于能以较小的成本较高的效率探索未知的世界'
     }
   },
   head: [
@@ -83,12 +83,13 @@ module.exports = {
             ]
           },
           {
-            text: '源码解析',
+            text: '框架原理',
             items: [
               { text: '如何学习源码', link: '/zh/origin/start.md'},
               { text: 'Lodash源码', link: '/zh/origin/lodash.md'},
               { text: 'Vue系列', link: '/zh/origin/vue.md'},
-              { text: 'React系列', link: '/zh/origin/react.md'}
+              // { text: 'React系列', link: '/zh/origin/react.md'},
+              { text: 'React', link: 'https://mp.weixin.qq.com/s/aqszbRAFXK5KA9x374Todg'}
             ]
           },
           {
