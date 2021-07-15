@@ -77,8 +77,9 @@ module.exports = {
             text: '经典面试题',
             items: [
               { text: '面试必看', link: '/zh/interview/index.md'},
-              // { text: '阿里巴巴', link: '/zh/interview/ali.md'},
               { text: '三年前端', link: '/zh/interview/threeYear.md'},
+              { text: '前端面试大全', link: '/zh/book/'}
+              // { text: '阿里巴巴', link: '/zh/interview/ali.md'},
               // { text: '龙湖地产', link: '/zh/interview/longhu.md'}
             ]
           },
@@ -135,6 +136,9 @@ module.exports = {
           ]}],
           '/zh/miniapp/': [{title: '小程序知识点', children: [
             '', 'WXS', 'wepy组件通信', '小程序事件', '小程序路由', '小程序组件', '小程序组件化'
+          ]}],
+          '/zh/book/': [{title: '前端面试大全', children: [
+            '', 'HTML篇', 'CSS', 'JavaScript篇', 'Ajax篇', '移动端篇', 'TypeScript篇', 'Webpack篇', 'Vue篇', 'React篇', 'Node篇', '项目篇', '前端术语篇'
           ]}]
         }
       }
