@@ -8,7 +8,7 @@ module.exports = {
     '/': {
       lang: 'zh-CN',
       title: '前端知识点总结',
-      description: '编程的魅力在于能以较小的成本较高的效率探索未知的世界'
+      description: '编程的魅力在于以较小的成本探索未知的世界'
     }
   },
   head: [
