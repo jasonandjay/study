@@ -119,7 +119,8 @@ UA.isMqq = navigator.userAgent.indexOf('QQ') !== -1;
 UA.isWeiBo = (s = ua.match(/__weibo__/)) ? !!s : false; // 是否微博浏览器
 UA.winClient = (s = ua.match(/winclient/)) ? !!s : false; // 是否pc客户端
 ```
-### rem计算
+### rem
+#### 原理
 #### css版本
 ```css
 /**
@@ -138,27 +139,27 @@ html{
 * 监听pc端的resize事件和mobile的横屏（orientationchange）事件
 */
 var fun = function (doc, win) {
-    var docEl = doc.documentElement,
-        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-        recalc = function () {
-            var clientWidth = docEl.clientWidth;
-            if (!clientWidth) return;
+var docEl = doc.documentElement,
+    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+    recalc = function () {
+        var clientWidth = docEl.clientWidth;
+        if (!clientWidth) return;
 
-            //这里是假设在750px宽度设计稿的情况下，1rem = 100px；
-            //可以根据实际需要修改
-            docEl.style.fontSize =  (clientWidth / 750)*100 + 'px';
-        };
-    if (!doc.addEventListener) return;
+        //这里是假设在750px宽度设计稿的情况下，1rem = 100px；
+        //可以根据实际需要修改
+        docEl.style.fontSize =  (clientWidth / 750)*100 + 'px';
+    };
+if (!doc.addEventListener) return;
     win.addEventListener(resizeEvt, recalc, false);
     doc.addEventListener('DOMContentLoaded', recalc, false);
-    }
-    fun(document, window);
+}
 fun(document, window);
 ```
 #### flexible+px2rem
+[flexbile cdn地址](http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js)
 ```js
 /**
-*  1. 在js中引入lib-flexbile
+*  1. 在js中引入lib-flexbile或引入线上cdn
 *  2. 在postcss的plugin中配置px2rem
 *  3. 设置remUnit单位为设计稿的十分之一，以750为基础做适配
 *  下方示例是umi3中.umirc的配置
@@ -167,27 +168,24 @@ import { defineConfig } from 'umi';
 var px2rem = require('postcss-px2rem');
 
 export default defineConfig({
-metas: [
-    {
-    name: 'referrer',
-    content: 'no-referrer',
-    }
-],
-nodeModulesTransform: {
-    type: 'none',
-},
-// routes: [
-//   { path: '/', component: '@/pages/index' },
-// ],
-fastRefresh: {},
-dva: {
-    immer: true,
-    hmr: false,
-},
-extraPostCSSPlugins: [px2rem({remUnit: 75})],
-publicPath: './',
-hash: true,
-dynamicImport: {}
+    metas: [
+        {
+        name: 'referrer',
+        content: 'no-referrer',
+        }
+    ],
+    nodeModulesTransform: {
+        type: 'none',
+    },
+    fastRefresh: {},
+    dva: {
+        immer: true,
+        hmr: false,
+    },
+    extraPostCSSPlugins: [px2rem({remUnit: 75})],
+    publicPath: './',
+    hash: true,
+    dynamicImport: {}
 });
 ```
     
