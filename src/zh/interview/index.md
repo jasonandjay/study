@@ -6,26 +6,26 @@ sidebarDepth: 2
 # 复习总结
 
 ## 源码必会
-- [x] 路由的实现原理
-- [x] vue2的响应式实现原理
-- [x] vue3的响应式实现原理
-- [x] vue2的部分特性
-  - [x] init各个配置项的顺序
-  - [x] methods中的this为什么指向当前示例？
-  - [x] computed的缓存如何实现？
-  - [x] 响应式中数组的缺陷，如何使用变异方法解决？
-  - [x] $forceUpdate的实现
-  - [x] $nextTick的实现
-  - [x] 响应式中对象的缺陷，如何使用$set、\$delete解决？
-  - [x] provider/inject的实现
-- [x] redux的实现原理
-  - [x] react-redux
-  - [x] redux-thunk
-  - [x] redux-logger
-- [x] react的部分特性 
-  - [x] hooks的实现原理
-  - [x] react-fiber
-  - [x] virtual dom/dom diff
+-  路由的实现原理
+-  vue2的响应式实现原理
+-  vue3的响应式实现原理
+-  vue2的部分特性
+     -  init各个配置项的顺序
+     -  methods中的this为什么指向当前示例？
+     -  computed的缓存如何实现？
+     -  响应式中数组的缺陷，如何使用变异方法解决？
+     -  $forceUpdate的实现
+     -  $nextTick的实现
+     -  响应式中对象的缺陷，如何使用$set、\$delete解决？
+     -  provider/inject的实现
+-  redux的实现原理
+     -  react-redux
+     -  redux-thunk
+     -  redux-logger
+-  react的部分特性 
+     -  hooks的实现原理
+     -  react-fiber
+     -  virtual dom/dom diff
 
 ## HTML
 - Html5语义化标签
