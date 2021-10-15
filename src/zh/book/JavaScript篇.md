@@ -617,7 +617,8 @@ then方法可以传递两个回调函数第一个是成功，第二个是失败�
 async 会将其后的函数（函数表达式或 Lambda）的返回值封装成一个 Promise 对象，而 await 会等待这个 Promise 完成，并将其 resolve 的结果返回出来。  
 async / await是ES7的重要特性之一，也是目前社区里公认的优秀异步解决方案。
 
-### 62. 介绍一下fetch；
+### 62. JS模块化的发展历程；
+[AMD,CMD,CommonJS,UMD,ESModule](https://mp.weixin.qq.com/s/bMgYgS6rWPkerDo-D6vmMw)
 
 ### 64. 箭头函数的作用域上下文和 普通函数作用域上下文 的区别
 箭头函数其实只是一个密名函数的语法糖，区别在于普通函数作用域中的this有特定的指向，一般指向window，而箭头函数中的this只有一个指向那就是指当前函数所在的对象，其实现原理其实就是类似于之前编程的时候在函数外围定义that一样，用了箭头函数就不用定义that了直接使用this 
