@@ -366,9 +366,146 @@ Person.prototype.sleepFirst = function(delay){
 }
 ```
 
-### [实现promise](https://jasonandjay.github.io/study/zh/interview/ali.html#_1-es6)
+### 实现promise
 - 一. 先执行Promise的参数，保存结果，当调用then的时候执行真正的回调
 - 二. 利用异步让Promise构造函数内部的resolve和reject晚于真正的回调执行
+
+### 原生Promise的实现
+```js
+class MyPromise{
+    static FULFILLED = 'fulfilled';
+    static PENDING = 'pending';
+    static REJECTED = 'rejected';
+    constructor(promiseCbk) {
+        this.state = MyPromise.PENDING;
+        this.value = null;
+        this.allCbk = [];
+        try{
+            promiseCbk(this.resolve.bind(this), this.reject.bind(this))
+        }catch(error) {
+            this.reject(error)
+        }
+        
+    }
+    resolve(value) {
+        if (this.state === MyPromise.PENDING) {
+            this.state = MyPromise.FULFILLED;
+            this.value = value;
+            setTimeout(() => {
+                this.allCbk.forEach(item => {
+                    item.onFulfilled(this.value)
+                })
+            })
+        }
+        
+    }
+    reject(value) {
+        if (this.state === MyPromise.PENDING) {
+            this.state = MyPromise.REJECTED;
+            this.value = value
+            setTimeout(() => {
+                this.allCbk.forEach(item => {
+                    item.onRejected(this.value)
+                })
+            })
+        }
+    }
+    then(onFulfilled, onRejected) {
+        if (typeof onFulfilled !== 'function') {
+            onFulfilled = () => this.value
+        }
+        if (typeof onRejected !== 'function') {
+            onRejected = () => this.value
+        }
+        return new MyPromise((resolve, reject) => {
+            if (this.state === MyPromise.PENDING) {
+                this.allCbk.push({
+                    onFulfilled: (value) => {
+                        try{
+                            let res = onFulfilled(this.value);
+                            resolve(res)
+                        }catch(error) {
+                            onRejected(error)
+                        }
+                    },
+                    onRejected: (value) => {
+                        try{
+                            let res = onRejected(this.value)
+                            resolve(res)
+                        }catch(error) {
+                            onRejected(error)
+                        }
+                    }
+                })
+            }
+            if (this.state === MyPromise.FULFILLED) {
+                setTimeout(() => {
+                    try{
+                        let res = onFulfilled(this.value);
+                        resolve(res)
+                    }catch(error){
+                        onRejected(error)
+                    }
+                })
+            }
+            if (this.state === MyPromise.REJECTED) {
+                setTimeout(() => {
+                    try{
+                        let res = onRejected(this.value)
+                        resolve(res)
+                    }catch(error) {
+                        onRejected(error)
+                    }
+                })
+            }
+        })
+    }
+    static resolve(value) {
+        return new MyPromise((resolve, reject) => {
+            if (value instanceof MyPromise) {
+                value.then(resolve, reject)
+            } else {
+                resolve(value)
+            }
+        })
+    }
+    static reject(value) {
+        return new MyPromise((resolve, reject) => {
+            if (value instanceof MyPromise) {
+                value.then(resolve, reject)
+            } else {
+                reject(value)
+            }
+        })
+    }
+    static all(promises) {
+        const allReslut = [];
+        return new MyPromise((resolve, reject) => {
+            promises.forEach(item => {
+                item.then(trueRes => {
+                    allReslut.push(trueRes);
+                    if (allReslut.length === promises.length) {
+                        resolve(allReslut)
+                    }
+                }, falseRes => {
+                    reject(falseRes)
+                })
+            })
+        })
+    }
+    static race(promises) {
+        return new MyPromise((resolve, reject) => {
+            promises.forEach(item => {
+                item.then(trueRes => {
+                    resolve(trueRes)
+                }, falseRes => {
+                    reject(falseRes)
+                })
+            })
+        })
+    }
+}
+```
 
 ### Promise.all,思路就是轮询
 ```js

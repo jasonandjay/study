@@ -61,6 +61,7 @@ module.exports = {
             text: '项目相关',
             items: [
               { text: '前端规范', link: '/zh/standard/Standard.md'},
+              { text: 'Git规范', link: '/zh/standard/Git.md'},
               { text: '项目流程', link: '/zh/standard/Project.md'},
               { text: '前后端交互', link: '/zh/standard/Cooperation.md'},
               { text: '移动端兼容问题', link: '/zh/standard/Compatibility.md'},
