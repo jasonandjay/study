@@ -4,7 +4,7 @@ sidebarDepth: 2
 ---
 # 开发流程
 ## 图解
-![项目流程](/study/project.jpg)
+![项目流程](/study/standard/project.jpg)
 ## 需求
 ### 评审
 召集需求涉及到的UI、开发、产品、测试人员整理业务流程，同步信息，明确分工  

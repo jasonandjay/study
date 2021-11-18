@@ -58,12 +58,12 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 - 已翻墙，去官网下载安装，后续安装插件
 - 常用插件如下，[安装地址](https://www.extfans.com/)
 
-![插件列表](/study/FastStoneEditor.jpg)
+![插件列表](/study/start/FastStoneEditor.jpg)
 
 
 ## 遇到问题如何解决
 ### 常用方法
-![秘籍](/study/baidu.png)
+![秘籍](/study/start/baidu.png)
 ### 进阶方法
 - 使用百度搜索问题
 - 使用Google搜索问题
