@@ -223,3 +223,117 @@ namespace React{
 - 模块与命名空间的区别
     - 命名空间在全局具有唯一性，可以跨文件
     - 模块以文件为单位，每个单独的文件是一个模块
+
+
+### 常用函数
+#### Omit：去除类型中某些项
+Omit<type,string>，参数：第一个为继承的type类型，第二个为想要的key的字符串，多个字符串用|分开，返回去除类型中某些项的type
+```ts
+/**
+ * Construct a type with the properties of T except for those in type K.
+ */
+type Omit<T, K extends keyof any> = Pick<T, Exclude<keyof T, K>>;
+
+interface Contact{
+  name: string;
+  phone?: string; 
+  avatar: string;
+  userid: string;
+  email: string;
+}
+export type OmitEmailContact = Omit<Contact, 'email' >;
+OmitEmailContact{
+  name: string;
+  phone?: string; 
+  avatar: string;
+  userid: string;
+}
+
+export type OmitEmailAvatarContact = Omit<Contact, 'email' | 'avatar'>;
+OmitEmailAvatarContact {
+  name: string;
+  phone?: string; 
+  userid: string;
+}
+```
+
+#### Pick: 选取类型中指定类型
+```ts
+type Pick<T, K extends keyof T> = {
+    [P in K]: T[P];
+};
+
+export interface ContactPick extends Pick<Contact, 'name' | 'phone'> {}
+ContactPick {
+  name: string;
+  phone?: string; 
+}
+```
+
+#### Partial: 将类型中所有选项变为可选
+```ts
+/**
+ * Make all properties in T optional
+ */
+type Partial<T> = {
+    [P in keyof T]?: T[P];
+};
+
+export interface PartialContact = Partial<Contact>
+PartialContact{
+  name?: string; // 姓名
+  phone?: string; // 手机号
+  email?: string; // 邮箱
+  avatar?: string; // 头像
+  userid?: string; // id
+}
+```
+
+#### Required: 将类型中所有选项变为必选，去除所有？
+```ts
+/**
+ * Make all properties in T required
+ */
+type Required<T> = {
+    [P in keyof T]-?: T[P];
+};
+
+export interface RequiredContact= Required<Contact>
+RequiredContact{
+  name: string; // 姓名
+  phone: string; // 手机号
+  email: string; // 邮箱
+  avatar: string; // 头像
+  userid: string; // id
+}
+```
+
+#### Exclude<T, U>: 取两者交集
+```ts
+type Exclude<T, U> = T extends U ? never : T;
+
+interface StoreInfo {
+    order_date: string 
+    record_date: string 
+    delivery_date: string 
+    createdAt_date: string
+}
+
+Exclude<StoreInfo, "order_date" | "record_date" | "sign_time"> 
+// sign_time
+```
+
+#### Extract<T, U>: 取两者差集
+```ts
+type Extract<T, U> = T extends U ? T : never;
+
+interface StoreInfo {
+    order_date: string 
+    record_date: string 
+    delivery_date: string 
+    createdAt_date: string
+}
+
+Extract<StoreInfo, "order_date" | "record_date" | "sign_time">
+// order_date
+```
