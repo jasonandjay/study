@@ -70,6 +70,7 @@ module.exports = {
               { text: '单页面应用', link: '/zh/standard/Spa.md'},
               { text: '渐进式web应用', link: '/zh/standard/Pwa.md'},
               { text: '网络安全', link: '/zh/standard/Security.md'},
+              { text: '单元测试', link: '/zh/standard/Jest.md'},
               { text: '前端自动化部署', link: '/zh/standard/Deploy.md'},
               { text: 'Webpack的loader和plugin', link: '/zh/standard/Webpack.md'}
             ],
@@ -79,7 +80,8 @@ module.exports = {
             items: [
               { text: '面试必看', link: '/zh/interview/index.md'},
               { text: '三年前端', link: '/zh/interview/threeYear.md'},
-              { text: '前端面试大全', link: '/zh/book/'}
+              { text: '前端面试大全', link: '/zh/book/'},
+              { text: '2022寒假作业', link: '/zh/practice/winterVacation.md'}
               // { text: '阿里巴巴', link: '/zh/interview/ali.md'},
               // { text: '龙湖地产', link: '/zh/interview/longhu.md'}
             ]

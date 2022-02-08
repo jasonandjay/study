@@ -2,7 +2,21 @@
 sidebar: auto
 # sidebarDepth: 2
 ---
-## 快速搭建开发环境
+# 快速搭建开发环境
+## mac使用指南
+### 系统操作指南
+- [新手入门教程](https://zhuanlan.zhihu.com/p/38973863)
+- [Mac使用技巧大整合](https://zhuanlan.zhihu.com/p/89987302)
+### 高效软件
+- 快捷提示：CheatSheet
+- 远程控制：向日葵远程控制
+- 图片处理：Photoshop CC
+- 思维导图：XMind
+- 开发工具：VSCode
+- 翻墙梯子：ClashX
+- 抓包工具：Charles
+- 其他按照公司开发环境作合理配置即可
+
 ## 三大环境
 ### 系统环境
 - 能够流畅运行代码和调试
@@ -68,7 +82,7 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 - 使用百度搜索问题
 - 使用Google搜索问题
 - 查看官方文档
-- 查看源码
+- 查看Github源码
 - 查看Github issues
 - 提出Github issues
-- 去stackoverflow提问
+- 去Stackoverflow提问
