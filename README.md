@@ -56,7 +56,7 @@ git push origin master
 - Send pr to add excellent content
 - Help us improve our content on exist pages  
  
-![improve](/src/.vuepress/public//improve.jpg)
+![improve](/src/.vuepress/public/global/improve.jpg)
 
 ## License
 

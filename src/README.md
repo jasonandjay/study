@@ -1,11 +1,11 @@
 ---
 home: true
-heroImage: /avatar.png
+heroImage: /global/avatar.png
 actionText: Let`s Go →
 actionLink: /zh/standard/Start.html
 sidebarDepth: 2
 sidebar: auto
-footer: MIT Licensed | Copyright © 2018-present Jasonandjay
+footer: COPYRIGHT © 2019备案号 京ICP备19009931号-1
 ---
 
 <div style="text-align: center">
@@ -27,24 +27,22 @@ footer: MIT Licensed | Copyright © 2018-present Jasonandjay
   </div>
 </div>
 
-### 起步就像数 1, 2, 3 一样容易
+### 学习前端就像数 1, 2, 3 一样容易
 
-``` bash
-# 安装
-yarn global add vuepress # 或 npm install -g vuepress
-
-# 创建一个 markdown 文件
-echo '# Hello VuePress' > README.md
-
-# 开始编写
-vuepress dev
-
-# 构建为静态文件
-vuepress build
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>The First Page</title>
+  </head>
+  <body>
+    <h1>Hello World</h1>
+  </body>
+</html>
 ```
 
-::: warning 兼容性注意事项
-- VuePress 要求 Node.js >= 8
+::: tip 学习注意事项
 - 知识点总结需要持之以恒的积累
 - 立目标，定计划，不断总结，持续超越
 :::
