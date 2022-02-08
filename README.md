@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="280" src="https://avatars1.githubusercontent.com/u/8192412?s=460&v=4" alt="logo">
+  <img width="100" src="https://avatars1.githubusercontent.com/u/8192412?s=460&v=4" alt="logo">
 </p>
 
 ## Target
@@ -56,8 +56,6 @@ git push origin master
 - Send pr to add excellent content
 - Help us improve our content on exist pages  
  
-![improve](/src/.vuepress/public//improve.jpg)
-
 ## License
 
 MIT
